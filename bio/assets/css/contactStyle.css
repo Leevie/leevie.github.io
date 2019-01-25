@@ -7,7 +7,6 @@
 body {
     margin: 0;
     padding: 0;
-    /* background-image: url("..\\images\\circuit.png"); */
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -57,15 +56,6 @@ hr {
 
 }
 
-/* I can't figure out why ".buttons" have not affect on it's container, "span".  Can't get span to change it's position. */
-
-span {
-    /* margin: auto; */
-    /* width: 700px; */
-    /* height: 800px; */
-    float: right;
-}
-
 .button {
     background-color: #ffffff;
     border: none;
@@ -93,11 +83,6 @@ span {
     /* padding: 40px; */
 }
 
-p {
-    display: inline;
-    line-height: 1.5;
-    text-align: left;
-}
 
 .middleBox {
     width: 860px;
@@ -111,12 +96,38 @@ p {
     position: absolute;
 }
 
-#profilePic {
-    float: left;
-    clear: both;
-    margin: 0 10px 10px 0;
-    box-shadow: 3px 3px 8px 2px #777777;
+/* Insert Form Styling here: */
+
+#formBox {
+    padding: 0 30px;
+    margin: 0 auto;
 }
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type=submit] {
+    width: auto;
+    background-color: #4aaaa5;
+    color: #ffffff;
+    padding: 14px 20px;
+    margin: 8px 0 36px 0;
+    border: none;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #777777;
+}
+
+/* End of Form Styling */
+
 
 .footer {
     padding: 30px;
