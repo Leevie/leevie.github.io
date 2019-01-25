@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+    /* text-align: center; */
+    color: #777777;
+    margin: 0;
+  }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #777777;
+}
+
+h2 {
+    font-size: 24px;
+    color: #4aaaa5;
+    float: left;
+    line-break: normal;
+}
+
+hr {
+    display: block;
+    clear: both;
+    margin: 1em auto;
+    border-style: inset;
+    border-width: 2px;
+    opacity: 70%;
+    color: #777777;
+}
+
+.bodyBox {
+    width: 960px;
+    margin: 0 auto;
+}
+
+
+.header {
+    margin: 20px 0 0 0;  /* same as setting: margin-top */
+    width: auto;
+    height: auto;
+}
+
+.nameBox {
+    width: 300px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #4aaaa5;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    float: left;
+
+}
+
+.button {
+    background-color: #ffffff;
+    border: none;
+    padding: 30px 30px;
+    text-align: center;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    float: right;
+}
+
+.button:hover {
+    background-color: gray;
+}
+
+.middleSection {
+    background-color: #ffffff;
+    width: 960px;
+    height: 700px;
+    border-top: 2px solid #cccccc;
+    border-bottom: 5px solid #4aaaa5;
+    clear: both;
+    align-content: center;
+    background-image: url("..\\images\\circuit.png");
+    /* padding: 40px; */
+}
+
+
+.middleBox {
+    width: 860px;
+    height: auto;
+    /* padding: 20px; */
+    margin-left: 50px;
+    margin-top: 80px;
+    /* text-align: center; */
+    background: #ffffff;
+    border: 1px solid #eee;
+    position: absolute;
+}
+
+/* Beginning of Porfolio Styling */
+
+#folioBox {
+    width: 700px;
+    height: 500px;
+    border: 3px solid black;
+    box-sizing: border-box;
+  }
+
+.folioGallery {
+    margin: 20px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+
+.folioGallery:hover {
+    border: 1px solid #777;
+}
+
+.folioImage {
+    width: 100%;
+    height: auto;
+}
+
+.folioDescript {
+    padding: 15px;
+    text-align: center;
+}
+
+/* End of Porfolio Styling */
+
+.footer {
+    padding: 30px;
+    /* clear: both; */
+    background-color: #666666;
+    color: #eee;
+    position: fixed;
+    /* bottom: 0; */
+    margin: 0 auto;
+    width: 960px;
+    text-align: center;
+}
