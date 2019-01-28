@@ -99,7 +99,6 @@ hr {
 
 /* Beginning of Porfolio Styling */
 
-/*   MY ORGINAL CODE
 #folioBox {
     width: 700px;
     height: 500px;
@@ -127,40 +126,6 @@ hr {
     padding: 15px;
     text-align: center;
 }
-*/
-
-/*      CODE TAKEN FROM W3SCHOOLS 'TRY IT' PAGE     */
-
-div.gallery {
-    margin: 20px;
-    border: 1px solid #ccc;
-    float: left;
-    width: 150px;
-  }
-  
-  div.gallery:hover {
-    border: 1px solid #777;
-  }
-  
-   div.gallery img {
-    width: 100%;
-    height: auto;
-  } 
-  
-  div.desc {
-    padding: 15px;
-    text-align: center;
-    background-color: #4aaaa5;
-    color: #ffffff;
-  }
-  
-  div.testa {
-      width: 700px;
-      height: 500px;
-      border: 3px solid black;
-      box-sizing: border-box;
-  }
-
 
 /* End of Porfolio Styling */
 
