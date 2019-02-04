@@ -129,3 +129,42 @@ p {
     width: 960px;
     text-align: center;
 }
+
+@media screen and (max-width: 980px) {
+    .bodyBox {
+        width: 768px;
+    }
+
+        #profilePic {
+            flex: auto;
+        }
+        
+
+  }
+
+  @media screen and (max-width: 768px) {
+    .bodyBox {
+        width: 768px;
+    }
+
+        #profilePic {
+            flex: auto;
+        }
+        
+
+  }
+
+  @media screen and (max-width: 640px) {
+    .bodyBox {
+        width: 768px;
+    }
+
+        #profilePic {
+            flex: auto;
+        }
+    
+        .header {
+            position: static;
+        }
+
+  }
