@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+    
+    <style>
+       
+        h1 {
+            border-bottom: 1px solid black;
+        }
+
+        h2 {
+            background-color: #4aaaa5;
+            color: white;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        nav {
+            background-color: #ffffff;
+            border-bottom: rgb(209, 22, 22) 1px solid;
+        }
+
+        span {
+            background-color: #4aaaa5;
+            color: white;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 24px;
+            /* padding: 10px 5px; */
+        }
+
+
+        .titleFont {
+            padding: 10px 10px;
+            float: left;
+            clear: both;
+        }
+
+        hr {
+            border-bottom: black 1px solid;
+
+        }
+
+        p {
+            float: left;
+            text-align: justify;
+        }
+
+          
+
+
+        #mainContent {
+            box-sizing: border-box;
+            background-color: gray;
+            height: calc(100vh - 100px);
+            
+        }
+
+
+
+
+        /* div {
+            border: 1px solid red;
+        } */
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+  <div class="container">
+
+            <nav class="navbar navbar-expand-md navbar-light bg-light">
+                <span class="navbar-brand">
+                    <img src="profilePic1.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+                    Leevie Martin
+                </span>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a class="nav-link" href="index.html">About Me</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html">Porfolio</a>
+                      </li>
+                      <li class="nav-item active">
+                        <a class="nav-link" href="contact.html">Contact <span class="sr-only">(current)</span></a>
+                      </li>
+
+                    </ul>
+                  </div>
+
+            </nav>
+        
+
+
+        <div class="row" style="border-bottom: #777 solid 1px"> <!--Title header-->
+          <div class="col-sm-12">
+              <div class="titleFont"> <h2>Contact</h2> </div>                   
+          </div>
+        </div>
+
+        <div class="row"> <!--Contact Form-->
+          <div class="col-sm-12">
+            
+                <form action="action_page.php">
+                    <div class="form-group">
+                        <label for="fname">Name:</label>
+                        <input type="text" class="form-control" id=fname name="fullname" placeholder="Mace Windu">
+                    </div>
+                    <div class="form-group">
+                        <label for="eAddr">Email:</label>
+                        <input type="text" class="form-control" id=eAddr name="emailAddress" placeholder="mwindu@coruscant.gov">
+                    </div>
+                    <div class="form-group">
+                        <label for="msgText" >Message:</label>
+                        <input type="text" class="form-control" id="msgText" name="messageText" placeholder="Type Message Here..">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
+          </div>
+        </div>
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+  </div>
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <div class="text-muted text-center bg-light">Copyright &copy;</div>
+        </div>
+    </footer>
+</body>

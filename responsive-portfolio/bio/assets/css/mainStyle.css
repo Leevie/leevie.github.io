@@ -1,0 +1,170 @@
+* {
+    box-sizing: border-box;
+    /* text-align: center; */
+    color: #777777;
+  }
+
+body {
+    margin: 0;
+    padding: 0;
+    /* background-image: url("..\\images\\circuit.png"); */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #777777;
+}
+
+h2 {
+    font-size: 24px;
+    color: #4aaaa5;
+    float: left;
+    line-break: normal;
+}
+
+hr {
+    display: block;
+    clear: both;
+    margin: 1em auto;
+    border-style: inset;
+    border-width: 2px;
+    opacity: 70%;
+    color: #777777;
+}
+
+.bodyBox {
+    width: 960px;
+    margin: 0 auto;
+}
+
+
+.header {
+    margin: 20px 0 0 0;  /* same as setting: margin-top */
+    width: auto;
+    height: auto;
+}
+
+.nameBox {
+    width: 300px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #4aaaa5;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    float: left;
+
+}
+
+/* I can't figure out why ".buttons" have not affect on it's container, "span".  Can't get span to change it's position. */
+
+span {
+    /* margin: auto; */
+    /* width: 700px; */
+    /* height: 800px; */
+    float: right;
+}
+
+.button {
+    background-color: #ffffff;
+    border: none;
+    padding: 30px 30px;
+    text-align: center;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    float: right;
+}
+
+.button:hover {
+    background-color: gray;
+}
+
+.middleSection {
+    background-color: #ffffff;
+    width: 960px;
+    height: 700px;
+    border-top: 2px solid #cccccc;
+    border-bottom: 5px solid #4aaaa5;
+    clear: both;
+    align-content: center;
+    background-image: url("..\\images\\circuit.png");
+    /* padding: 40px; */
+}
+
+p {
+    display: inline;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.middleBox {
+    width: 860px;
+    height: auto;
+    /* padding: 20px; */
+    margin-left: 50px;
+    margin-top: 80px;
+    /* text-align: center; */
+    background: #ffffff;
+    border: 1px solid #eee;
+    position: absolute;
+}
+
+#profilePic {
+    float: left;
+    clear: both;
+    margin: 0 10px 10px 0;
+    box-shadow: 3px 3px 8px 2px #777777;
+}
+
+.footer {
+    padding: 30px;
+    /* clear: both; */
+    background-color: #666666;
+    color: #eee;
+    position: fixed;
+    /* bottom: 0; */
+    margin: 0 auto;
+    width: 960px;
+    text-align: center;
+}
+
+@media screen and (max-width: 980px) {
+    .bodyBox {
+        width: 960px;
+    }
+
+        #profilePic {
+            flex: auto;
+        }
+        
+
+  }
+
+  @media screen and (max-width: 768px) {
+    .bodyBox {
+        width: 768px;
+    }
+
+        #profilePic {
+            flex: auto;
+        }
+        
+
+  }
+
+  @media screen and (max-width: 640px) {
+    .bodyBox {
+        width: 768px;
+    }
+
+        #profilePic {
+            flex: auto;
+        }
+    
+        .header {
+            position: static;
+        }
+
+  }
