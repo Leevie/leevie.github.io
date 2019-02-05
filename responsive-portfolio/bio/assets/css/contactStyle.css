@@ -140,3 +140,65 @@ input[type=submit]:hover {
     width: 960px;
     text-align: center;
 }
+
+
+@media screen and (max-width: 980px) {
+    .middleBox {
+        width: 860px;
+    }
+
+        #profilePic {
+            
+        }
+        
+
+  }
+
+  @media screen and (max-width: 768px) {
+    .middleSection {
+        width: 60%;
+    }
+
+    .middleBox {
+        width: 60%;
+    }
+
+    #profilePic{
+        width: 100%;
+        height: auto;
+    }
+
+  }
+
+  @media screen and (max-width: 640px) {
+    .middleSection {
+        width: 80%;
+    }
+
+    .middleBox {
+        width: 80%;
+    }
+
+        #profilePic {
+            flex: auto;
+        }
+    
+        .header {
+            position: static;
+            width: 100%;
+        }
+
+        .nameBox {
+            width: auto;
+            height: 100%;
+        }
+
+        .footer {
+            width: 100%;
+        }
+
+        span {
+            float: left;
+        }
+
+  }

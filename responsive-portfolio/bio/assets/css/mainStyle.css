@@ -88,7 +88,7 @@ span {
     border-top: 2px solid #cccccc;
     border-bottom: 5px solid #4aaaa5;
     clear: both;
-    align-content: center;
+    /* align-content: center; */
     background-image: url("..\\images\\circuit.png");
     /* padding: 40px; */
 }
@@ -131,32 +131,40 @@ p {
 }
 
 @media screen and (max-width: 980px) {
-    .bodyBox {
-        width: 960px;
+    .middleBox {
+        width: 860px;
     }
 
         #profilePic {
-            flex: auto;
+            
         }
         
 
   }
 
   @media screen and (max-width: 768px) {
-    .bodyBox {
-        width: 768px;
+    .middleSection {
+        width: 60%;
     }
 
-        #profilePic {
-            flex: auto;
-        }
-        
+    .middleBox {
+        width: 60%;
+    }
+
+    #profilePic{
+        width: 100%;
+        height: auto;
+    }
 
   }
 
   @media screen and (max-width: 640px) {
-    .bodyBox {
-        width: 768px;
+    .middleSection {
+        width: 80%;
+    }
+
+    .middleBox {
+        width: 80%;
     }
 
         #profilePic {
@@ -165,6 +173,16 @@ p {
     
         .header {
             position: static;
+            width: 100%;
+        }
+
+        .nameBox {
+            width: auto;
+            height: 100%;
+        }
+
+        .footer {
+            width: 100%;
         }
 
   }
