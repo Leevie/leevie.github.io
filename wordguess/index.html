@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>Word Guess Game (in progress)</title>
+    <style>
+
+      div {
+        background-color: rebeccapurple;
+        color: aliceblue;
+        font-size: 24px;
+      }
+
+      #correctGuesses {
+        
+        height: 50px;
+        width: auto;
+      }
+
+      #wrongGuess {
+        height: 50px;
+        width: auto;
+        background-color: yellow;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+
+    <div class="row"> 
+    <div id="correctGuesses" class="col-12-md"></div> 
+    </div>   
+
+    <div class="row">
+    <div id="wrongGuess" class="col-12-md"></div>
+    </div>
+
+    <script>
+    
+      
+    // Targeted word to guess (I created as an Array, but maybe just a String?)
+    var myWord = ["w","o","r","d","f","u","n"];
+    var aVar = "";
+    // Set dashes for length of word, placed where word will show up -- #correctGuesses  **NOTE may need to move this under the variables, they haven't been defined yet.
+    for(w = 0; w < myWord.length; w++) {
+      document.getElementById("correctGuesses").innerHTML = "_";
+    };
+
+    // Empty array delared, will be used for guessed letters
+    var guessAry = [];
+
+
+    // Repace with onkeyup event -- document.onkeyup = function(event) {var keyPress = event.key}
+    // var guessVar = prompt("Please Guess A Letter:  ");  //maybe this needs to move inside 'for' statement, page isn't loading before this runs
+
+    // guessed variable (guessVar) goes into an array (guessAry)
+      //needs to be a function that stores the variable, then displays it in a line (document.getElementById(someDiv) = line that displays wrong guesses... ELSE is in the wordArray, word to guess)
+      // guessAry.push(guessVar);
+    
+    //  document.getElementById("wrongGuess");
+
+    // for (i = 0; i < getElementById.length; i++) {
+    //     for(j = i; guessAry[j] === keyPress;) {
+    //       if( guessAry[j] === keyPress) {
+    //           alert("WORKS!");
+    //       } else {
+    //         alert("FAILED")
+    //       }
+    //     }
+    //         };
+    //  Re-writing to Allow for 10 tries
+// $(document).ready(function(){  //Not sure if this is needed to let the page load first?
+
+    // for (i = 0; i < 10; i++) {
+    //   var guessVar = prompt("Please Guess A Letter:  ");
+    //       guessAry.push(guessVar);
+
+    //     if(guessAry.indexOf(guessVar) == -1) {
+    //       alert("Wrong Letter, try again:");
+    //       document.getElementById("wrongGuess").innerHTML = guessVar + " ";
+    //     } else {
+    //       alert("Awesome, guess another!");
+    //       // argh, need function here that swithes out the letter for it's position in the 'myWord' array
+    //     };
+    // };
+
+// });
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </div>
+  </body>
+</html>
