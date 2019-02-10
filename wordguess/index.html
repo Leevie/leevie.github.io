@@ -32,7 +32,7 @@
     </style>
   </head>
   <body>
-    <div class="container">
+    <!-- <div class="container">
 
     <div class="row"> 
     <div id="correctGuesses" class="col-12-md"></div> 
@@ -40,21 +40,27 @@
 
     <div class="row">
     <div id="wrongGuess" class="col-12-md"></div>
-    </div>
+    </div> -->
 
     <script>
     
-      
+  // $(document).ready(function(){  //Not sure if this is needed to let the page load first?
+    
     // Targeted word to guess (I created as an Array, but maybe just a String?)
-    var myWord = ["w","o","r","d","f","u","n"];
-    var aVar = "";
+    // var myWord = ["w","o","r","d","f","u","n"];
+    // var testArr = [];
     // Set dashes for length of word, placed where word will show up -- #correctGuesses  **NOTE may need to move this under the variables, they haven't been defined yet.
-    for(w = 0; w < myWord.length; w++) {
-      document.getElementById("correctGuesses").innerHTML = "_";
-    };
+    // for(w = 0; w < myWord.length; w++) {
+    //   testArr[w] = "_";
 
+    
+    //   console.log(testArr);
+    // };
+
+    // document.getElementById("correctGuesses").innerHTML = testArr.join(' ');
+// });
     // Empty array delared, will be used for guessed letters
-    var guessAry = [];
+    // var guessAry = [];
 
 
     // Repace with onkeyup event -- document.onkeyup = function(event) {var keyPress = event.key}
@@ -76,22 +82,76 @@
     //     }
     //         };
     //  Re-writing to Allow for 10 tries
-// $(document).ready(function(){  //Not sure if this is needed to let the page load first?
+// function guessFunc()  {
+//     for (i = 0; i < 10; i++) {
+//       var guessVar = prompt("Please Guess A Letter:  ");
+//           guessAry.push(guessVar);
 
-    // for (i = 0; i < 10; i++) {
-    //   var guessVar = prompt("Please Guess A Letter:  ");
-    //       guessAry.push(guessVar);
+//         if(guessAry.indexOf(guessVar) == -1) {
+//           alert("Wrong Letter, try again:");
+//           document.getElementById("wrongGuess").innerHTML = guessVar + " ";
+//         } else {
+//           alert("Awesome, guess another!");
+//           // argh, need function here that switches out the letter for it's position in the 'myWord' array
+//         };
+//       };
+//     } 
+//   guessFunc();  //this didn't work. 
 
-    //     if(guessAry.indexOf(guessVar) == -1) {
-    //       alert("Wrong Letter, try again:");
-    //       document.getElementById("wrongGuess").innerHTML = guessVar + " ";
-    //     } else {
-    //       alert("Awesome, guess another!");
-    //       // argh, need function here that swithes out the letter for it's position in the 'myWord' array
-    //     };
-    // };
 
-// });
+  //  STARTING EVERYTING FROM SCRATCH!!  ARGH! :(
+
+    // Words to be guessed -- maybe an Array?  Figure out how to import words.
+    var myWords = ["Ironman","Tony","Hulk","Bruce","Steve","Captain America","Spiderman","Peter"];
+
+    // Maybe use the random from Rock,Paper,Scissors assignment to choose a word.
+    // Will need to use .indexOf maybe to compare input letter to one in the string?  Maybe word should be an array? 
+   // var computerGuess = computerChoices[Math.floor(Math.random()*computerChoices.length)];
+    var casedGuessMeWord = myWords[Math.floor(Math.random() * myWords.length)];  // Real word, in it's original case, to be used to reveal at the end.
+    // Word to be guessed in lowercase
+    var guessMeWord  = casedGuessMeWord.toLowerCase();
+
+    //Ah.. dashes get stored in an Array insted of written to the page.  Makes sense (thanks, Google!)
+    var guessAry = [];  //ie answerArray
+
+    // Loop to create those dashes
+    for(var i = 0; i < guessMeWord.length; i++) {
+      guessAry[i] = "_";
+    }
+
+    // Letters left over  -- may changed this to number of tries
+    var lettersLeftOver = guessMeWord.length;
+
+    // This runs the game until all letters are guessed.
+    while(lettersLeftOver > 0) {
+
+      // Alert progress of the game from the array with dashes - will fill in as correct letters are guessed.
+      alert(guessAry.join(" "));
+    
+
+
+      // Action Code
+      var guessVar = prompt("Please Guess A Letter:  ");  //replace this with 'onkeyup' function
+
+
+        // For loop for guessing letters
+        for(var j = 0; j < guessMeWord.length; j++) {
+          if(guessMeWord[j] === guessVar) {
+            guessAry[j] = guessVar;
+            lettersLeftOver--;
+          };
+        };
+      }; // End of While
+      
+        // Alerts answer to screen.  Need to change this.  
+        alert(guessAry.join(" "));
+        alert("Good job!  The answer was " + casedGuessMeWord);
+
+    
+
+
+
+
     </script>
 
     <!-- Optional JavaScript -->
