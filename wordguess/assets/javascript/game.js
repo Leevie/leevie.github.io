@@ -1,3 +1,5 @@
+function myFunction() {
+
 // window.onload = function () {
 
     //  Also didn't work.  :(
@@ -86,23 +88,33 @@
         // This runs the game until all letters are guessed.
         while(lettersLeftOver > 0) {
     
-          // Alert progress of the game from the array with dashes - will fill in as correct letters are guessed.
+          ///// Alert progress of the game from the array with dashes - will fill in as correct letters are guessed.
           alert("Please guess the following word:  " + guessAry.join(" "));
+          //var elmtwordToGuess = document.getElementById("wordToGuess");
+          //elmtwordToGuess.innerHTML = ("Please guess the following word:  " + guessAry.join(" "));
         
-    
+          // function funcGuess () {
+          //   alert("Please guess the following word:  " + guessAry.join(" "));
+          //   pressedKey();
+          // };
     
           // Action Code
           // Changing input to onkeyup event
           // var guessVar = onkeyup;
           
-          // var 
+          // document.onkeyup = function pressedKey (event) {
+
+          //   var keyPress = event.key;
+          // };
          
     
           var elmtGuessedLetters = document.getElementById("guessedLetters");
     
-          // This works, but need to replace this with 'onkeyup' function
-          var guessVar = prompt("Please Guess A Letter:  ");
+          ///// This works, but need to replace this with 'onkeyup' function
+          // var guessVar = event.key;   //Can't get to work.
+          var guessVar = prompt("Please Guess A Letter:  ");  //works
           elmtGuessedLetters.innerHTML += guessVar;
+          
     
     
             // For loop for guessing letters
@@ -124,3 +136,4 @@
     
     // });
     // }
+}
