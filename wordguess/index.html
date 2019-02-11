@@ -108,11 +108,12 @@
     // Will need to use .indexOf maybe to compare input letter to one in the string?  Maybe word should be an array? 
    // var computerGuess = computerChoices[Math.floor(Math.random()*computerChoices.length)];
     var casedGuessMeWord = myWords[Math.floor(Math.random() * myWords.length)];  // Real word, in it's original case, to be used to reveal at the end.
+
     // Word to be guessed in lowercase
     var guessMeWord  = casedGuessMeWord.toLowerCase();
 
     //Ah.. dashes get stored in an Array insted of written to the page.  Makes sense (thanks, Google!)
-    var guessAry = [];  //ie answerArray
+    var guessAry = []; 
 
     // Loop to create those dashes
     for(var i = 0; i < guessMeWord.length; i++) {
@@ -126,12 +127,19 @@
     while(lettersLeftOver > 0) {
 
       // Alert progress of the game from the array with dashes - will fill in as correct letters are guessed.
-      alert(guessAry.join(" "));
+      alert("Please guess the following word:  " + guessAry.join(" "));
     
 
 
       // Action Code
-      var guessVar = prompt("Please Guess A Letter:  ");  //replace this with 'onkeyup' function
+      // Changing input to onkeyup event
+      // var guessVar = onkeyup;
+     
+
+
+
+      // This works, but need to replace this with 'onkeyup' function
+      var guessVar = prompt("Please Guess A Letter:  ");
 
 
         // For loop for guessing letters
@@ -144,8 +152,8 @@
       }; // End of While
       
         // Alerts answer to screen.  Need to change this.  
-        alert(guessAry.join(" "));
-        alert("Good job!  The answer was " + casedGuessMeWord);
+        // alert(guessAry.join(" "));
+        alert("You guessed it!  The answer was " + casedGuessMeWord);
 
     
 
