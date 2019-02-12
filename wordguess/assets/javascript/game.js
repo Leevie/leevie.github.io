@@ -64,7 +64,7 @@ function myFunction() {
       //  STARTING EVERYTING FROM SCRATCH!!  ARGH! :(
     
         // Words to be guessed -- maybe an Array?  Figure out how to import words.
-        var myWords = ["Ironman","Tony","Hulk","Bruce","Steve","Captain America","Spiderman","Peter"];
+        var myWords = ["Ironman","Tony Stark","The Hulk","Bruce Banner","Steve Rogers","Captain America","Spiderman","Peter Parker"];
     
         // Maybe use the random from Rock,Paper,Scissors assignment to choose a word.
         // Will need to use .indexOf maybe to compare input letter to one in the string?  Maybe word should be an array? 
