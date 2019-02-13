@@ -73,3 +73,25 @@ _- If ('targetNum' !=== 'inputNum') _May only need an 'If over target number' st
 ### Arrays
 - var targetArray -- this array contains the random target numbers (19 through 120) to guess 
 - var guessArray -- this array contains the random guess numbers assigned to gem images (1 through 12)
+
+
+## Additional Notes
+This may help:
+
+    var someArray = [];  //empty array
+    var myRand = "";  //random number
+
+    for(var x = 1; x <= 120; x++) { //creates array with numbers from 1 to 120 
+      someArray.push(x);
+    };
+    console.log(someArray);
+
+    var randO = document.getElementById("randomX"); //creates var for 'id = randomX'
+
+    for(var i = 0; i < 4; i++) {  //creates 4 random numbers from my array "someArray", output to 'id = randomX'
+      myRand = Math.floor(Math.random() * someArray.length);
+      console.log(myRand);
+      //console.log("<br>");
+      randO.innerHTML += myRand + "<br>";
+    };
+    
