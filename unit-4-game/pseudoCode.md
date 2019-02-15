@@ -8,7 +8,7 @@ Style page similar to example
 
 * Title Block
     * Fixed text, class = 'titleDiv'
-    * Fixed height/width 'div', floated left
+    * Fixed height/width 'div', floated left 
 
 * Instruction Block
     * Fixed text, class = 'insructDiv'
@@ -25,6 +25,7 @@ Style page similar to example
         * Updated as player either matches Target Number (win) or is over Target (loss), If statement
 
     * Gem Block
+        * Images get written here, class = 'gemDiv'
         * Contains 4 'crytal/gem' images of the same dimensions (same class?)
         * Each image randomly assigned a different number for the "round", changes when "round" is over (reset function?)
         * Images (or class) will have jQuery 'click' functions that update 'inputNumDiv's contents
