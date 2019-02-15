@@ -3,8 +3,8 @@
 * {
     box-sizing: border-box;
     background-color: gray;
-    border: 2px rebeccapurple solid;
-
+    padding: 5px;
+    border: 2px rebeccapurple solid; /* to show borders. comment out when done. */
 }
 /* Specific Divs Classes */
 
