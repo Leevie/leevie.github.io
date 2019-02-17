@@ -75,6 +75,9 @@ _- If ('targetNum' !=== 'inputNum') _May only need an 'If over target number' st
 - var targetArray -- this array contains the random target numbers (19 through 120) to guess 
 - var guessArray -- this array contains the random guess numbers assigned to gem images (1 through 12)
 
+- Need a collection that holds the images -- array?  object?
+- var gemArray -- array that holds each image?
+
 
 ## Additional Notes
 This may help:
