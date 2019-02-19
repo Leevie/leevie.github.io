@@ -99,3 +99,11 @@ This may help:
       randO.innerHTML += myRand + "<br>";
     };
     
+
+- This works for writing images to screen -- still need to figure out how to assign a value (take from the "Crystal" in class activity)
+
+        var imageGem = $("<img>");
+        imageGem.addClass("imageGemBtn");
+        imageGem.attr("src", "https://via.placeholder.com/150" );
+        $(".gemDiv").append(imageGem);
+
