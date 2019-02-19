@@ -11,9 +11,12 @@
 #titleDiv {
 /* float: left; */
 height: 100px;
-width: 300px;
-margin: 30px 0px;
+width: auto;
+margin: 30px auto;
 background-color: orange;
+text-align: center;
+color: aliceblue;
+font-size: 30px;
 }
 
 #instructDiv {
@@ -46,7 +49,10 @@ font-weight: 700;
 height: 100px;
 width: 300px;
 margin: 30px 0px;
-background-color: aqua;
+background-color: rgb(8, 100, 100);
+font-size: 24px;
+color: aliceblue;
+text-align: center;
 }
 
 .gemDiv {
@@ -60,6 +66,7 @@ background-color: white;
 .imageGemBtn {
 height: 100px;
 width: 100px;
+background-color: white;
 }
 
 /* img {
