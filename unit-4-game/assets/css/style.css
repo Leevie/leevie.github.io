@@ -2,9 +2,22 @@
 
 * {
     box-sizing: border-box;
-    background-color: gray;
+    /* background-color: gray; */
     padding: 5px;
-    border: 2px rebeccapurple solid; /* to show borders. comment out when done. */
+    border: black 5px solid;
+    border-radius: 4px;
+    border-style: hidden;
+
+    /*border: 2px rebeccapurple solid; /* to show borders. comment out when done. */
+
+}
+
+.container {
+    /*background-image: url("..\\images\\bananas.png");*/
+}
+
+.col-md-6{
+    background-image: url("..\\images\\bananas.png");
 }
 /* Specific Divs Classes */
 
@@ -12,7 +25,7 @@
 /* float: left; */
 height: 100px;
 width: auto;
-margin: 30px auto;
+margin: 0 auto;
 background-color: orange;
 text-align: center;
 color: aliceblue;
@@ -23,8 +36,10 @@ font-size: 30px;
 /* float: left; */
 height: auto; /*was 100px*/
 width: auto; /*was 300px*/
-margin: 30px 0px;
-background-color: yellow;
+margin: 10px auto;
+background-color: #fbe4a7;
+color: #1a1a1a;
+border: 1px gray groove;
 }
 
 .targetNumDiv {
@@ -41,16 +56,19 @@ font-weight: 700;
 
 .winLoss {
     margin: 0 5px;
-    background-color: aqua;
+    background-color: #2ea3a3;
+    width: auto;
+    color: #1a1a1a;
 }
 
 .scoreDiv {
 /* float: left; */
 height: 100px;
 width: 300px;
-margin: 30px 0px;
+margin: 0 auto;
 background-color: rgb(8, 100, 100);
 font-size: 24px;
+font-weight: 500;
 color: aliceblue;
 text-align: center;
 }
@@ -59,7 +77,7 @@ text-align: center;
 float: left;
 height: auto;
 width: auto; /* Was set to 300px */
-margin: 30px 0px;
+margin: 0 auto;
 background-color: white;
 }
 
