@@ -105,7 +105,6 @@ var roundResult = "";
 for (var k = 0; k < sourceGem.length; k++) {
     imageGem = $("<img>");
     imageGem.addClass("imageGemBtn");
-    // imageGem.attr("src", "https://via.placeholder.com/150" );
     imageGem.attr("gem-value", gemNum());
     imageGem.attr("src", sourceGem[k]);
     $(".gemDiv").append(imageGem);
