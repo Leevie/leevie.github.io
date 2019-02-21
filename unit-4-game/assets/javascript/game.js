@@ -43,16 +43,22 @@ for (var j = 1; j <= 12; j++) {
 // Variables
 
 // This also needs to be a function
-var targetNum = Math.floor(Math.random() * targetArray.length);  // <-- this worked, but generated randoms from 1-101 -->   // Target Number that gets displayed in targetNumDiv -- shows user what to guess
 
-// $(".targetNumDiv").html(targetNum);
+var targetNumFunc = function () {
+    result = Math.floor((Math.random() * targetArray.length) + 19);
+    return result;  // <-- this worked, but generated randoms from 1-101 -->   // Target Number that gets displayed in targetNumDiv -- shows user what to guess
+}
+
+var targetNum = targetNumFunc();
+
+$(".targetNumDiv").html(targetNum);
 
 // This sort of works.. <19 values show as blank, only shows values over 19.
-if(targetNum < 19) {
-    targetNum = Math.floor(Math.random() * targetArray.length);
-} else {
-    $(".targetNumDiv").html(targetNum);
-}
+// if(targetNum < 19) {
+//     targetNum = Math.floor(Math.random() * targetArray.length);
+// } else {
+//     $(".targetNumDiv").html(targetNum);
+// }
 
 
 
@@ -125,7 +131,7 @@ var reset = function() {
     guessNum = 0;
     
     // Reset the target number
-    targetNum = Math.floor(Math.random() * targetArray.length);
+    targetNum = targetNumFunc();
 
     $(".targetNumDiv").html(targetNum);
 
