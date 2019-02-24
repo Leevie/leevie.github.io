@@ -81,10 +81,16 @@ function myFunction() {
         for(var i = 0; i < guessMeWord.length; i++) {
           guessAry[i] = "_";
         }
+
+        var usersGuess = [];
     
         // Letters left over  -- may changed this to number of tries
         var lettersLeftOver = guessMeWord.length;
-    
+        
+
+        console.log(guessMeWord);
+
+
         // This runs the game until all letters are guessed.
         while(lettersLeftOver > 0) {
     
@@ -113,8 +119,8 @@ function myFunction() {
           ///// This works, but need to replace this with 'onkeyup' function
           // var guessVar = event.key;   //Can't get to work.
           var guessVar = prompt("Please Guess A Letter:  ");  //works
-          elmtGuessedLetters.innerHTML += guessVar;
-          
+          usersGuess.push(guessVar);
+          elmtGuessedLetters.innerHTML = usersGuess;
     
     
             // For loop for guessing letters
