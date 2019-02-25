@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+    border: 1px solid rebeccapurple;
+}
+
+/* div {
+    height: 100px;
+} */
+
+#left-column {
+    height: 700px;
+}
+
+#qstDiv {
+    height: 200px;
+}
+
+#ansDiv {
+    height: 400px;
+}
+
+/* #button {
+    float: left;
+    clear: both;
+    position: relative;
+    margin: 0 auto;
+    top: 100px;
+} */
+
+#start {
+    text-align: center;
+    height: 80px;
+    width: auto;
+    position: relative;
+    margin: 0 auto;
+    top: 100px;
+}
+
+#right-column {
+    height: 700px;
+}
