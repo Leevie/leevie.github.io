@@ -7,51 +7,89 @@
 var clockRunning = false;
 var questObjOne;
 var ansLtrArray = ["A", "B", "C", "D"];
+var questionIndex = 0;
+var correctAns;
+
+var timeCounter = 15;
+var scoreCounter = 0;
+var questionCounter = 0;
 
 // Game Start Function
-var startGame = function() {    
+var iterateQuestion = function() {    
     // Needs an "if clockRunning.. condition for setTimeout to initialize. ...maybe this goes in question-functions
     // Calls the question-functions
-    // for(var i = 0; i < questArray.length; i++) {
-    for(var i = 0; i < 1; i++) {
-        someObj = questArray[i];
+        
+        if(questionIndex >= questArray.length){
+           alert("All Done!"); // End Game Stuff
+        } else{
+        var someObj = questArray[questionIndex];
+        questionIndex++;
+        questionCounter++;
+        gameScore();
         askQuestions(someObj);
+        
+        }
     };
  
-};
+// };
 
 // Start Button
-$("#start").on("click", startGame);
+$("#start").on("click", iterateQuestion);
 
-var compareFunc = function(a) {
-    b = someObj.correctAns();
-    if(a === b) {
-        $("#ansDiv").html("YES!!");
-    } else {
-        $("#ansDiv").html("NOPE!!");
-    }
-
+var gameScore = function(){  //displays score and timer
+    // $("#timerDiv").html("Time Left:  " + timeCounter) // Timer Placeholder
+    $("#scoreDiv").html("Time Left:  " + timeCounter + "<br>" + "Question Number: " + questionCounter + "<br>" + "Score:  " + scoreCounter);
 };
+
 
 // Functions in an Array -- change to an Object?
 var askQuestions = function(someObj) {
-       
+        $("#qstDiv").empty();
+        $("#ansDiv").empty();
+        correctAns = someObj.correctAns();
+        console.log("What is correctAns here: " + correctAns);
+
+
         $("#qstDiv").html(someObj.question);
         // $("#ansDiv").html(someObj.answers[0] + "<br>" + someObj.answers[1] + "<br>" + someObj.answers[2] + "<br>" + someObj.answers[3]); //This works
         // For Loop to assign values to questions
+        someList = $("<ul>")
+        someList.addClass("list-group");
+        $("#ansDiv").append(someList);
         for(var j = 0; j < someObj.answers.length; j++) {
-            ansText = $("<p>");
-            ansText.addClass("answer-text");
+            ansText = $("<li>");
+            ansText.addClass("list-group-item");
             ansText.attr("answer-value", ansLtrArray[j]);
-            $("#ansDiv").html(ansText);
-            $("#ansDiv").append(someObj.answers[j] + "<br>");
-            // console.log("ansText is: " + ansText + someObj.answers[j] + ansLtrArray[j]);
-            compareFunc("C");
+            $(".list-group").append(ansText);
+            ansText.html(someObj.answers[j]);
         }
+        // function that asks for input here?  returns result and passed to compareFunc.
+            // what is the user's answer?  if 
+        $(document).keyup(function(event){
+            a = event.key;
+            userAnswer = a.toUpperCase();
+            });
+    
+        // userAnswer = "C";  //for example --Assign on.click value here (user's input)
+        console.log("What is userAnswer:  " + userAnswer);
+        console.log(correctAns);
+
+        // compareFunc(userAnswer);  //Works
         
     };
 
 
+    var compareFunc = function(a) {
+
+        b = correctAns;  //need to figure out how to get correct answer here.
+        if(a === b) {
+            $("#ansDiv").html("YES!!");
+        } else {
+            $("#ansDiv").html("NOPE!!");
+        }
+        console.log(a === b);
+    iterateQuestion();
+    };
 
 var questArray = [
     // questionOneFunc = function() 

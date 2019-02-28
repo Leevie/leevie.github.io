@@ -53,3 +53,11 @@
 - End function overwrites the question-div, 
     -- displays total questions
     -- questions corr 
+
+NOTES
+Buttons for answers, pull values to compare.
+    maybe assign "correct"/"false" values to answers and "compare" that way?
+
+- About the clock:
+    It needs to run a function until user input is given
+    If no user input, it needs to stop or do something else when done
