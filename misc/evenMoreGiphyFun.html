@@ -64,8 +64,8 @@ console.log("That is:  " + a);
         // event.preventDefault();
         var img = $("<img>");
               img.attr("src", response.data.images.fixed_height_small.url);
-              var tr = $("<tr>").append(img);
-              $("tbody").append(tr);
+              var tr = $("<tr>").html(img);
+              $("tbody").html(tr);
           
         //         });
       });
