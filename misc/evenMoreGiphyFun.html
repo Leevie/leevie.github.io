@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Favorite Movies</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Basic Table</h2>
+    <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>
+    <table class="table">
+        <tbody>
+      <thead>
+        <tr>
+            <th>Gifs</th>
+        </tr>
+        <tr>
+          <th id="searchBox">
+                <form id="movie-form">
+                  <label for="add-gif">Search for a Gif</label>
+                  <input type="text" id="add-gif" value="something"><br>
+            
+                  <!-- Button triggers new movie to be added -->
+                  <input id="nom-gif" type="submit">
+                </form>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      // The below code fills in the first row of the table
+      $("#nom-gif").on("click", function(event) {
+        // event.preventDefault() prevents submit button from trying to send a form.
+        // Using a submit button instead of a regular button allows the user to hit
+        // "Enter" instead of clicking the button if desired
+        event.preventDefault();
+        var a = $("#add-gif").val().trim();
+        console.log(event);
+        console.log("This is:  " + a);
+                
+console.log("That is:  " + a);
+      var apiKey = "BGLn1MChCH92a5eM0yluChMk89OWrItU";
+  
+      //var search = $("#add-gif").val().trim();
+      var weirdness = 10;
+      var queryURL = "https://api.giphy.com/v1/gifs/translate?api_key="+apiKey+"&s=" + a + "&weirdness="+weirdness;
+  
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      }).then(function(response) {
+        // Create a new table row element
+        console.log(response)
+          // could use '.map' to iterate through an array-- fastest way
+  
+                // THIS WORKS!!
+        //         $("#add-gif").on("click", function(event) {
+        // // event.preventDefault() prevents submit button from trying to send a form.
+        // // Using a submit button instead of a regular button allows the user to hit
+        // // "Enter" instead of clicking the button if desired
+        // event.preventDefault();
+        var img = $("<img>");
+              img.attr("src", response.data.images.fixed_height_small.url);
+              var tr = $("<tr>").append(img);
+              $("tbody").append(tr);
+          
+        //         });
+      });
+
+        });
+      
+    </script>
+</body>
+</html>
