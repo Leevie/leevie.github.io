@@ -12,7 +12,7 @@ for (var i = 0; i < topics.length; i++) {
     $("#gif-div-btn").append(div);
 };
 
-// Performs actions to search for gifs when clicked
+// Performs actions to search for gifs when clicked, display them to the screen.
 $(".btn").on("click", function () {
     $("#gif-div").html("");  // This should clear the DIV each time so only one set is displayed
 
@@ -39,12 +39,36 @@ $(".btn").on("click", function () {
             for(var d = 0; d < results.length; d++) {
             console.log("I GOT HERE!");
             var gifImage = $("<img>")
-                .attr("src", results[d].images.fixed_height_small.url); // image URL string of object
-
-
+            .attr("src", results[d].images.fixed_height_small_still.url) // ANIMATED (default state) image URL string of object
+            .attr("gif-animated", results[d].images.fixed_height_small.url) // ANIMATED image URL string of object
+            .attr("gif-static", results[d].images.fixed_height_small_still.url) // STATIC image URL string of object
+            .attr("gif-state", "static") // reflects the state of the .gif
+            .attr("id", "gifImage");    
             $("#gif-div").append(gifImage);     
 
             }
 
+
+
         });
+
+
+        
+});
+
+$("#gifImage").on("click", function() {  // (".gif") didn't work, trying ("<img>")-- didn't work, trying an id--DIDN'T WORK!  revisit
+console.log("I MADE IT TO 'CLICK'");
+
+var state = $(this).attr("gif-state");
+
+
+if(state === "static") {  // If static, change the URL to the animated .gif, change the attr 'state' to animated
+  $(this).attr("src", $(this).attr("gif-animated"));
+  $(this).attr("gif-state", "animate");
+  
+}
+if (state === "animated") {  // Vice-versa of above
+  $(this).attr("src", $(this).attr("gif-static"));
+  $(this).attr("gif-state", "static");
+};
 });
