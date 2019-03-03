@@ -1,5 +1,13 @@
 * {
     box-sizing: border-box;
+    border: 1px dotted rebeccapurple;
+}
+
+#top-row {
+    font-size: 36px;
+    text-align: center;
+    font-weight: 500;
+    background-color: #49458054;
 }
 
 .gif-button {

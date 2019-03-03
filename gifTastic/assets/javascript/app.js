@@ -4,6 +4,7 @@
 
 var topics = ["Belle", "Ariel", "Princess Aurora", "Snow White", "Rapunzel", "Gaston", "Malefacent", "Ravenna", "Mother Gothel"];
 // Creates the Buttons
+$("#gif-div-btn").html("");
 for (var i = 0; i < topics.length; i++) {
     var div = $("<div>");
     div.addClass("btn btn-outline-primary gif-button")
@@ -11,6 +12,24 @@ for (var i = 0; i < topics.length; i++) {
         .text(topics[i]);
     $("#gif-div-btn").append(div);
 };
+
+$("#gif-search").on("click", function(event) {  // Need a different event versus 'click'
+    event.preventDefault();
+    var a = $(this).val().trim();
+    topics.push(a);
+    console.log(topics);
+    // may need to Create this as a function
+    $("#gif-div-btn").html("");
+    for (var i = 0; i < topics.length; i++) {
+        var div = $("<div>");
+        div.addClass("btn btn-outline-primary gif-button")
+            .attr("gif-name", topics[i])
+            .text(topics[i]);
+        $("#gif-div-btn").append(div);
+    };
+    //////
+
+});
 
 // Performs actions to search for gifs when clicked, display them to the screen.
 $(".btn").on("click", function () {
@@ -38,13 +57,21 @@ $(".btn").on("click", function () {
 
             for(var d = 0; d < results.length; d++) {
             console.log("I GOT HERE!");
+            var gifCard = $("<div>")
+            .addClass("card")
+            .attr("id", "gif-card")
+            .attr("style", "width: auto;");
+            // .text("This is some text");
+
             var gifImage = $("<img>")
             .attr("src", results[d].images.fixed_height_small_still.url) // ANIMATED (default state) image URL string of object
             .attr("gif-animated", results[d].images.fixed_height_small.url) // ANIMATED image URL string of object
             .attr("gif-static", results[d].images.fixed_height_small_still.url) // STATIC image URL string of object
             .attr("gif-state", "static") // reflects the state of the .gif
-            .attr("id", "gifImage");    
-            $("#gif-div").append(gifImage);     
+            .attr("id", "gifImage");
+            $("#gif-div").append(gifCard) 
+            gifCard.append(gifImage);
+            gifCard.append("<div class='card-body'>" + "<p class='card-text'>" + "Rated:  " + results[d].rating.toUpperCase() + "</p>");  // Evil **** Genius!!
 
             }
 
