@@ -2,7 +2,7 @@
 
 
 
-var topics = ["Belle", "Ariel", "Princess Aurora", "Snow White", "Rapunzel", "Gaston", "Malefacent", "Ravenna", "Mother Gothel"];
+var topics = ["Belle", "Ariel", "Princess Aurora", "Snow White", "Rapunzel", "Gaston", "Ursala", "Malefacent", "Ravenna", "Mother Gothel"];
 // Creates the Buttons
 $("#gif-div-btn").html("");
 for (var i = 0; i < topics.length; i++) {
@@ -40,7 +40,7 @@ $(".btn").on("click", function () {
     var ratingVar = "G";
     var limitVar = 10;
     var offsetVar = Math.floor(Math.random() * 15);
-    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + myKey + "&q=" + searchVar + "&limit=" + limitVar + "$offset=" + offsetVar  + "&rating=" + ratingVar;
+    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + myKey + "&q=" + searchVar + "&limit=" + limitVar + "&offset=" + offsetVar  + "&rating=" + ratingVar;
 
     console.log("This is offsetVar:  " + offsetVar);
     console.log("This is searchVar:  " + searchVar);
@@ -64,11 +64,13 @@ $(".btn").on("click", function () {
             // .text("This is some text");
 
             var gifImage = $("<img>")
-            .attr("src", results[d].images.fixed_height_small_still.url) // ANIMATED (default state) image URL string of object
+            // .attr("src", results[d].images.fixed_height_small_still.url) // STATIC (default state) image URL string of object
+            .attr("src", results[d].images.fixed_height_small.url) // ANIMATED (to show Gavin)
             .attr("gif-animated", results[d].images.fixed_height_small.url) // ANIMATED image URL string of object
             .attr("gif-static", results[d].images.fixed_height_small_still.url) // STATIC image URL string of object
-            .attr("gif-state", "static") // reflects the state of the .gif
-            .attr("id", "gifImage");
+            .attr("gif-state", "animated") // reflects the state of the .gif
+            .attr("id", "gifImage")
+            .addClass("gifImages");
             $("#gif-div").append(gifCard) 
             gifCard.append(gifImage);
             gifCard.append("<div class='card-body'>" + "<p class='card-text'>" + "Rated:  " + results[d].rating.toUpperCase() + "</p>");  // Evil **** Genius!!
@@ -83,18 +85,17 @@ $(".btn").on("click", function () {
         
 });
 
-$("#gifImage").on("click", function() {  // (".gif") didn't work, trying ("<img>")-- didn't work, trying an id--DIDN'T WORK!  revisit
+$(document).on("click",".gifImages", function() {  // (".gif") didn't work, trying ("<img>")-- didn't work, trying an id--DIDN'T WORK!  revisit
 console.log("I MADE IT TO 'CLICK'");
 
-var state = $(this).attr("gif-state");
+var state = $("#gifImage").attr("gif-state");
 
 
 if(state === "static") {  // If static, change the URL to the animated .gif, change the attr 'state' to animated
   $(this).attr("src", $(this).attr("gif-animated"));
-  $(this).attr("gif-state", "animate");
+  $(this).attr("gif-state", "animated");
   
-}
-if (state === "animated") {  // Vice-versa of above
+}else if (state === "animated") {  // Vice-versa of above  
   $(this).attr("src", $(this).attr("gif-static"));
   $(this).attr("gif-state", "static");
 };

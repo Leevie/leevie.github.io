@@ -1,6 +1,10 @@
 * {
     box-sizing: border-box;
-    border: 1px dotted rebeccapurple;
+    /* border: 1px dotted rebeccapurple; */
+}
+
+.container {
+    background-image: url("..\\images\\2236add7aa099dbda27574aabecfa222.jpg");
 }
 
 #top-row {
@@ -8,6 +12,8 @@
     text-align: center;
     font-weight: 500;
     background-color: #49458054;
+    background-image: url("..\\images\\8ae4c44e08cfe3b9bc5ea0b7bf5a54f1.jpg");
+
 }
 
 .gif-button {
