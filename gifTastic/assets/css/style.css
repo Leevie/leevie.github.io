@@ -3,8 +3,19 @@
     /* border: 1px dotted rebeccapurple; */
 }
 
+body {
+    background-color: #007bff;
+}
+
+#pTitle {
+    background-color: black;
+    margin: 0;
+    padding: auto;
+}
+
 .container {
     background-image: url("..\\images\\2236add7aa099dbda27574aabecfa222.jpg");
+    background-size: contain;
 }
 
 #top-row {
@@ -12,10 +23,27 @@
     text-align: center;
     font-weight: 500;
     background-color: #49458054;
-    background-image: url("..\\images\\8ae4c44e08cfe3b9bc5ea0b7bf5a54f1.jpg");
+    /* background-image: url("..\\images\\8ae4c44e08cfe3b9bc5ea0b7bf5a54f1.jpg"); */
+    /* background-image: url("..\\images\\milYace-free-disney-backgrounds.jpg"); */
+    background-image: url("..\\images\\3LBX9VI-free-disney-backgrounds.jpg");
+    background-size: cover;
+    background-position-y: center;
+    /* background-size: auto; */
+    color: white;
 
+}
+
+.card {
+    line-height: 0;
+    text-align: center;
 }
 
 .gif-button {
     background-color: black;
+    color: white;
+}
+
+label {
+    color: black;
+    font-weight: 500;
 }
