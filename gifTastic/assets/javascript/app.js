@@ -13,12 +13,7 @@ for (var i = 0; i < topics.length; i++) {
     $("#gif-div-btn").append(div);
 };
 
-
-
-$(document).on("click", ".gif-click", function(event) {  // Need a different event versus 'click'  // **ISSUE "enter" button seems to 'refresh' the page.
-    event.preventDefault();
-
-    //newGifFunction();
+var newGifFunction = function(){
 
     console.log("I made it to SEARCH");
     var a = $("#gif-search").val().trim();
@@ -33,6 +28,13 @@ $(document).on("click", ".gif-click", function(event) {  // Need a different eve
             .text(topics[i]);
         $("#gif-div-btn").append(div);
     };
+};
+
+
+$(document).on("click", ".gif-click", function(event) {  // Need a different event versus 'click'  // **ISSUE "enter" button seems to 'refresh' the page.
+    event.preventDefault();
+    newGifFunction();
+
 });
 
 // Performs actions to search for gifs when clicked, display them to the screen.
@@ -69,15 +71,15 @@ $(document).on("click", ".btn", function () {
             // .text("This is some text");
 
             var gifImage = $("<img>")
-            .attr("src", results[d].images.fixed_height_small_still.url) // STATIC (default state) image URL string of object
+            .attr("src", results[d].images.fixed_width_still.url) // STATIC (default state) image URL string of object
             // .attr("src", results[d].images.fixed_height_small.url) // ANIMATED (to show Gavin)
-            .attr("gif-animated", results[d].images.fixed_height_small.url) // ANIMATED image URL string of object
-            .attr("gif-static", results[d].images.fixed_height_small_still.url) // STATIC image URL string of object
+            .attr("gif-animated", results[d].images.fixed_width.url) // ANIMATED image URL string of object
+            .attr("gif-static", results[d].images.fixed_width_still.url) // STATIC image URL string of object
             .attr("gif-state", "static") // reflects the state of the .gif
             .addClass("gif-image");
             $("#gif-div").append(gifCard) 
             gifCard.append(gifImage);
-            gifCard.append("<div class='card-body'>" + "<p class='card-text'>" + "Rated:  " + results[d].rating.toUpperCase() + "</p>");  // Evil **** Genius!!
+            gifCard.append("<div class='card-body'>" + "<p class='card-text'>" + "Title:  " + results[d].title + "</p>" + "<p class='card-text'>" + "Rated:  " + results[d].rating.toUpperCase() + "</p>");  // Evil **** Genius!!
 
             }
 
