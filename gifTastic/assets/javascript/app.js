@@ -13,8 +13,12 @@ for (var i = 0; i < topics.length; i++) {
     $("#gif-div-btn").append(div);
 };
 
+
+
 $(document).on("click", ".gif-click", function(event) {  // Need a different event versus 'click'  // **ISSUE "enter" button seems to 'refresh' the page.
     event.preventDefault();
+
+    //newGifFunction();
 
     console.log("I made it to SEARCH");
     var a = $("#gif-search").val().trim();
