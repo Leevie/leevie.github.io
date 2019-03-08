@@ -13,7 +13,7 @@ for (var i = 0; i < topics.length; i++) {
     $("#gif-div-btn").append(div);
 };
 
-var newGifFunction = function(){
+var newGifFunction = function () {
 
     console.log("I made it to SEARCH");
     var a = $("#gif-search").val().trim();
@@ -31,7 +31,7 @@ var newGifFunction = function(){
 };
 
 
-$(document).on("click", ".gif-click", function(event) {  // Need a different event versus 'click'  // **ISSUE "enter" button seems to 'refresh' the page.
+$(document).on("click", ".gif-click", function (event) {  // Need a different event versus 'click'  // **ISSUE "enter" button seems to 'refresh' the page.
     event.preventDefault();
     newGifFunction();
 
@@ -46,7 +46,7 @@ $(document).on("click", ".btn", function () {
     var ratingVar = "PG";
     var limitVar = 10;
     var offsetVar = Math.floor(Math.random() * 10);
-    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + myKey + "&q=" + searchVar + "&limit=" + limitVar + "&offset=" + offsetVar  + "&rating=" + ratingVar;
+    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + myKey + "&q=" + searchVar + "&limit=" + limitVar + "&offset=" + offsetVar + "&rating=" + ratingVar;
 
     console.log("This is offsetVar:  " + offsetVar);
     console.log("This is searchVar:  " + searchVar);
@@ -54,55 +54,61 @@ $(document).on("click", ".btn", function () {
         url: queryURL,
         method: "GET"
     })
-    .then(function (response) {
-        console.log(queryURL);  // console.logging the URL
-        console.log(response);
-        var results = response.data;
-        console.log(results);
+        .then(function (response) {
+            console.log(queryURL);  // console.logging the URL
+            console.log(response);
+            var results = response.data;
+            console.log(results);
 
 
-            for(var d = 0; d < results.length; d++) {
-            console.log("I GOT HERE!");
-            var gifCard = $("<div>")
-            .addClass("card")
-            .attr("id", "gif-card")
-            .attr("style", "width: auto;")
-            .attr("style", "height: auto");
-            // .text("This is some text");
+            // for(var d = 0; d < results.length; d++) {
+            results.array.forEach(element => {
+                
+            });
+            results.forEach(function (d) {
+                console.log("I GOT HERE!");
+                var gifCard = $("<div>")
+                    .addClass("card")
+                    .attr("id", "gif-card")
+                    .attr("style", "width: auto;")
+                    .attr("style", "height: auto");
+                // .text("This is some text");
 
-            var gifImage = $("<img>")
-            .attr("src", results[d].images.fixed_width_still.url) // STATIC (default state) image URL string of object
-            // .attr("src", results[d].images.fixed_height_small.url) // ANIMATED (to show Gavin)
-            .attr("gif-animated", results[d].images.fixed_width.url) // ANIMATED image URL string of object
-            .attr("gif-static", results[d].images.fixed_width_still.url) // STATIC image URL string of object
-            .attr("gif-state", "static") // reflects the state of the .gif
-            .addClass("gif-image");
-            $("#gif-div").append(gifCard) 
-            gifCard.append(gifImage);
-            gifCard.append("<div class='card-body'>" + "<p class='card-text'>" + "Title:  " + results[d].title + "</p>" + "<p class='card-text'>" + "Rated:  " + results[d].rating.toUpperCase() + "</p>");  // Evil **** Genius!!
 
-            }
+
+                var gifImage = $("<img>")
+                    .attr("src", d.images.fixed_width_still.url) // STATIC (default state) image URL string of object
+                    // .attr("src", d.images.fixed_height_small.url) // ANIMATED (to show Gavin)
+                    .attr("gif-animated", d.images.fixed_width.url) // ANIMATED image URL string of object
+                    .attr("gif-static", d.images.fixed_width_still.url) // STATIC image URL string of object
+                    .attr("gif-state", "static") // reflects the state of the .gif
+                    .addClass("gif-image");
+                $("#gif-div").append(gifCard)
+                gifCard.append(gifImage);
+                gifCard.append("<div class='card-body'>" + "<p class='card-text'>" + "Title:  " + d.title + "</p>" + "<p class='card-text'>" + "Rated:  " + d.rating.toUpperCase() + "</p>" + "<p class='card-text'>" + "<a href='" + d.images.fixed_width.url + "'>" + "Download" + "</a>" + "</p>");  // Evil **** Genius!!
+
+            })
 
 
 
         });
 
 
-        
+
 });
 
-$(document).on("click",".gif-image", function() {  // (".gif") didn't work, trying ("<img>")-- didn't work, trying an id--DIDN'T WORK!  revisit
-console.log("I MADE IT TO 'CLICK'");
+$(document).on("click", ".gif-image", function () {  // (".gif") didn't work, trying ("<img>")-- didn't work, trying an id--DIDN'T WORK!  revisit
+    console.log("I MADE IT TO 'CLICK'");
 
-var state = $(this).attr("gif-state");
+    var state = $(this).attr("gif-state");
 
 
-if(state === "static") {  // If static, change the URL to the animated .gif, change the attr 'state' to animated
-  $(this).attr("src", $(this).attr("gif-animated"));
-  $(this).attr("gif-state", "animated");
-  
-}else if (state === "animated") {  // Vice-versa of above  
-  $(this).attr("src", $(this).attr("gif-static"));
-  $(this).attr("gif-state", "static");
-};
+    if (state === "static") {  // If static, change the URL to the animated .gif, change the attr 'state' to animated
+        $(this).attr("src", $(this).attr("gif-animated"));
+        $(this).attr("gif-state", "animated");
+
+    } else if (state === "animated") {  // Vice-versa of above  
+        $(this).attr("src", $(this).attr("gif-static"));
+        $(this).attr("gif-state", "static");
+    };
 });
