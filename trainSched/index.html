@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+
+    <title>Train Scheduler</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css'
+        integrity='sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS' crossorigin='anonymous'>
+    <link rel='stylesheet' href='assets/css/style.css'>
+    <script src='https://code.jquery.com/jquery-3.3.1.slim.min.js'
+        integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo'
+        crossorigin='anonymous'></script>
+
+</head>
+
+<body>
+    <div class='container'>
+        <div class="row"></div>
+        <div class="col-md-12" id="title-row">
+            <div class="jumbotron"><h1>Train Scheduler</h1></div>
+        </div>
+        <div class="row"></div>
+        <div class="col" id="train-list">
+            <table id="train-table" class="table">
+                <thead class="thead-light">
+                    <p id="train-table-title">Current Train Schedule</p>
+                    <tr>
+                        <th scope="col">Train Name</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">Next Arrival</th>
+                        <th scope="col">Frequency (min)</th>
+                        <th scope="col">Minutes Away</th>
+                    </tr>
+                </thead>
+            </table>
+
+        </div>
+        <div class="row"></div>
+        <div class="col" id="train-form">
+            <p id="train-form-title">Add a Train:</p>
+            <form class=form-group action="submit">
+                <div class="form-group">
+                    <label for="train-name">Train Name:</label>
+                    <input type="text" id="train-name">
+                </div>
+                <div class="form-group">
+                    <label for="train-dest">Destination:</label>
+                    <input type="text" id="train-dest">
+                </div>
+                <div class="form-group">
+                    <label for="train-first">First Train Time (HH:mm - Military Time):</label>
+                    <input type="time" id="train-first">
+                </div>
+                <div class="form-group">
+                    <label for="train-freq">Frequency (min):</label>
+                    <input type="number" id="train-freq">
+                </div>
+                <button type="submit" class="btn btn-primary" id="click-button">Submit</button>
+
+            </form>
+        </div>
+        <!-- Optional JavaScript -->
+
+
+        <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyD9sYVQn5kZgnbU84rxmzdhxMMGGO49dgE",
+                authDomain: "train-scheduler-31304.firebaseapp.com",
+                databaseURL: "https://train-scheduler-31304.firebaseio.com",
+                projectId: "train-scheduler-31304",
+                storageBucket: "train-scheduler-31304.appspot.com",
+                messagingSenderId: "400174851283"
+            };
+            firebase.initializeApp(config);
+
+            var database = firebase.database(); // database to a variable
+
+            $("#click-button").on("click", function (event) {
+                event.preventDefault();
+                var trainName = $("#train-name").val().trim();
+                var trainDest = $("#train-dest").val().trim();
+                var trainFirst = $("#train-first").val().trim();
+                var trainFreq = $("#train-freq").val().trim();
+
+                $("#train-name").val("");  // These clear out the form
+                $("#train-dest").val("");
+                $("#train-first").val("");
+                $("#train-freq").val("");
+
+                database.ref().push({ // Writing the variable "clickCounter" to the database as a key/value pair -- clickCounter
+                    // increments it before hand so it's writing the incremented value each time "#click-button" is clicked.
+
+                    train: trainName,
+                    destination: trainDest,
+                    firstTrain: trainFirst,
+                    frequency: trainFreq
+
+                });
+            });
+
+
+            database.ref().on("child_added", function (childSnapshot) {
+                console.log("Made it to 'child_added' function")
+                var train = childSnapshot.val().train;
+                var destination = childSnapshot.val().destination;
+                var firstTrain = childSnapshot.val().firstTrain;
+                var frequency = childSnapshot.val().frequency;
+
+                console.log(train);
+                console.log(destination);
+                console.log(firstTrain);
+                console.log(frequency);
+
+                // var a = "<div>";
+
+                // a.text("Replacing This Stuff");
+                // $("#train-table").html(a);
+
+
+                var rowHtml = $("<tr>");
+                $(rowHtml).append("<th scope='row'>" + train + "</th>",
+                    "<td>" + destination + "</td>",
+                    "<td>" + firstTrain + "</td>",
+                    "<td>" + frequency + "</td>",
+                    "<td>" + "" + "</td>",
+                    "<td>" + "" + "</td>");
+
+                $("#train-table").append(rowHtml);
+            });
+
+
+
+
+        </script>
+        <script src='assets/javascript/app.js'></script>
+</body>
+
+</html>
