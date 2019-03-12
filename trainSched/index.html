@@ -15,20 +15,34 @@
     <script src='https://code.jquery.com/jquery-3.3.1.slim.min.js'
         integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo'
         crossorigin='anonymous'></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
 </head>
 
 <body>
-    <div class='container'>
+    <div class="container bg-image">
         <div class="row"></div>
         <div class="col-md-12" id="title-row">
-            <div class="jumbotron"><h1>Train Scheduler</h1></div>
+            <div class="jumbotron">
+                <h1>Train Scheduler</h1>
+                <hr class="my-4">
+                <div class="clock">
+                    <div id="Date"></div>
+                    <ul>
+                        <li id="hours"></li>
+                        <li id="point">:</li>
+                        <li id="min"></li>
+                        <li id="point">:</li>
+                        <li id="sec"></li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="row"></div>
         <div class="col" id="train-list">
             <table id="train-table" class="table">
                 <thead class="thead-light">
-                    <p id="train-table-title">Current Train Schedule</p>
+                    <p id="train-table-title">Current Train Schedule:</p>
                     <tr>
                         <th scope="col">Train Name</th>
                         <th scope="col">Destination</th>
@@ -46,19 +60,19 @@
             <form class=form-group action="submit">
                 <div class="form-group">
                     <label for="train-name">Train Name:</label>
-                    <input type="text" id="train-name">
+                    <input type="text" class="form-control form-control-sm" id="train-name">
                 </div>
                 <div class="form-group">
                     <label for="train-dest">Destination:</label>
-                    <input type="text" id="train-dest">
+                    <input type="text" class="form-control form-control-sm" id="train-dest">
                 </div>
                 <div class="form-group">
                     <label for="train-first">First Train Time (HH:mm - Military Time):</label>
-                    <input type="time" id="train-first">
+                    <input type="time" class="form-control form-control-sm" id="train-first">
                 </div>
                 <div class="form-group">
                     <label for="train-freq">Frequency (min):</label>
-                    <input type="number" id="train-freq">
+                    <input type="number" class="form-control form-control-sm" id="train-freq">
                 </div>
                 <button type="submit" class="btn btn-primary" id="click-button">Submit</button>
 
@@ -139,7 +153,44 @@
 
 
         </script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                // Create two variable with the names of the months and days in an array
+                var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
+                // Create a newDate() object
+                var newDate = new Date();
+                // Extract the current date from Date object
+                newDate.setDate(newDate.getDate());
+                // Output the day, date, month and year   
+                $('#Date').html(dayNames[newDate.getDay()] + " " + newDate.getDate() + ' ' + monthNames[newDate.getMonth()] + ' ' + newDate.getFullYear());
+
+                setInterval(function () {
+                    // Create a newDate() object and extract the seconds of the current time on the visitor's
+                    var seconds = new Date().getSeconds();
+                    // Add a leading zero to seconds value
+                    $("#sec").html((seconds < 10 ? "0" : "") + seconds);
+                }, 1000);
+
+                setInterval(function () {
+                    // Create a newDate() object and extract the minutes of the current time on the visitor's
+                    var minutes = new Date().getMinutes();
+                    // Add a leading zero to the minutes value
+                    $("#min").html((minutes < 10 ? "0" : "") + minutes);
+                }, 1000);
+
+                setInterval(function () {
+                    // Create a newDate() object and extract the hours of the current time on the visitor's
+                    var hours = new Date().getHours();
+                    // Add a leading zero to the hours value
+                    $("#hours").html((hours < 10 ? "0" : "") + hours);
+                }, 1000);
+            });
+        </script>
         <script src='assets/javascript/app.js'></script>
 </body>
 
 </html>
+
