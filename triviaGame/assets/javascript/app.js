@@ -11,6 +11,7 @@ var questionIndex = 0;
 var correctAns;
 // var answerVar;
 
+var timeClock;
 var timeCounter = 15;
 var scoreCounter = 0;
 var questionCounter = 0;
@@ -41,14 +42,27 @@ var iterateQuestion = function() {
 // Start Button
 $("#start").on("click", iterateQuestion);
 
-var gameScore = function(){  //displays score and timer
+const gameScore = function(){  //displays score and timer
     // $("#timerDiv").html("Time Left:  " + timeCounter) // Timer Placeholder
     $("#scoreDiv").html("Time Left:  " + timeCounter + "<br>" + "Question Number: " + questionCounter + "<br>" + "Score:  " + scoreCounter);
 };
 
-
+const checkIf = function(guess){
+    clearInterval(timeClock);
+    timeCounter = 15;
+    compareFunc(guess);
+};
 // Functions in an Array -- change to an Object?
-var askQuestions = function(someObj) {
+const askQuestions = function(someObj) {
+
+        timeClock = setInterval(function() {
+            timeCounter--
+            gameScore();
+            if (timeCounter === 0){
+                checkIf();
+            }
+        }, 1000)
+
         $("#qstDiv").empty();
         $("#ansDiv").empty();
         correctAns = someObj.correctAns();
@@ -77,13 +91,14 @@ var askQuestions = function(someObj) {
             console.log("WORKS!!");
             answerVar = $(this).attr("answer-value");
             console.log("This click returned:  " + answerVar);
-            compareFunc(answerVar);  //Works
+            checkIf(answerVar);  //Works
         });
         
     };
 
 
     var compareFunc = function(a) {
+        
 
         b = correctAns;  //need to figure out how to get correct answer here.
         if(a === b) {
@@ -93,7 +108,7 @@ var askQuestions = function(someObj) {
             $("#ansDiv").html("You've failed me for the last time, Admiral...");
         }
         console.log(a === b);
-    iterateQuestion();
+    setTimeout(iterateQuestion, 2000);
     };
 
 var questArray = [
