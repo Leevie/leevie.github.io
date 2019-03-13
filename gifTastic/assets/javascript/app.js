@@ -62,9 +62,9 @@ $(document).on("click", ".btn", function () {
 
 
             // for(var d = 0; d < results.length; d++) {
-            results.array.forEach(element => {
+            // results.array.forEach(element => {
                 
-            });
+            // });
             results.forEach(function (d) {
                 console.log("I GOT HERE!");
                 var gifCard = $("<div>")
