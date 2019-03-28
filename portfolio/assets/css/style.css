@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+    /* border: 1px red dotted; */
+}
+
+#filler-top {
+    padding: 10%;
+}
+
+#filler-bottom {
+    padding: 10%;
+}
+
+.head-content {
+    height: 100vh;
+    position: relative;
+}
+.bg-image {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+  }
+  
+  #main-title {
+    text-align: center;
+    color: #fff;
+    font-weight: 600;
+    font-size: 3rem;
+
+  }
+  
+  #main-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+
+#kat-stokes {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.text-slider-items {
+    display: none;
+  }
+
+.profile-img {
+  text-align: center;
+  width: 200px;
+}
