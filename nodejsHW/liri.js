@@ -9,7 +9,8 @@ var argvInput2 = process.argv;
 // console.log(argvInput1);
 // console.log(argvInput2);
 
-
+var moment = require('moment');
+var timeVar = moment().format();
 
 var keys = require("./keys.js");
 // var spotify = new Spotify(keys.spotify);
@@ -39,7 +40,8 @@ var bandsFunc = function(artistVar) {
             var country = response.data[i].venue.country;
         var location = (city + ", " + region + ", " + country);
         //Date of the Event (use moment to format this as "MM/DD/YYYY")
-        var eventDate = response.data[i].datetime;
+            var rawDate = response.data[i].datetime;
+        var eventDate = moment(rawDate).format("dddd, MMMM Do YYYY, h:mm a");
         
         console.log("========================================");
         console.log("=  " + venue);
@@ -57,4 +59,6 @@ var bandsFunc = function(artistVar) {
 if (argvInput1 === "concert-this") {
 bandsFunc(argvInput2);
 }
+
+console.log(timeVar);
 
