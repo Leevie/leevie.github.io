@@ -83,7 +83,7 @@ var spotifyFunc = function(argvInput2) {
 // End --> SPOTIFY
 
 // Start --> OMDB
-var omdbKey = "trilogy";
+var omdbKey = keys.omdb.id;
 var omdbFunc = function(movieVar) {
 
   var movieName = movieVar.join(" ");

@@ -3,8 +3,17 @@
 
 Welcome to my first 'NodeJS' App!  
 
-This is a simple NodeJS app that takes in certain commands and outputs (hopefully) desired output.  
+This is a simple NodeJS app that takes in certain commands and outputs (hopefully) desired output. 
 
+```
+**Note**:  
+This app uses the following APIs: 
+* Band In Town 
+* Spotify
+* OMDB
+
+You will need your own keys/ids to make it work.  
+```
 Here are the commands and syntax to use:
 
 Call the app:  
