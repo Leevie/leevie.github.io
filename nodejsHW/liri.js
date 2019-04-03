@@ -1,7 +1,6 @@
 require("dotenv").config();
 var moment = require("moment");
 var keys = require("./keys.js");
-// console.log(keys);
 var Spotify = require("node-spotify-api");
 var axios = require("axios");
 
@@ -9,34 +8,34 @@ process.argv.splice(0, 2);
 var argvInput1 = process.argv.shift();
 var argvInput2 = process.argv;
 
-// console.log(argvInput1);
-// console.log(argvInput2);
 
 // Functions for API/AXIOS Calls
 // Start --> BANDS_IN_TOWN
 var bandsintown = keys.bandsInTown;
 var bandsFunc = function(artistVar) {
   var artist = artistVar.join(" ");
-  //   console.log(artist);
+  
   var queryUrl =
     "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=" + bandsintown.id;
 
   axios.get(queryUrl).then(function(response) {
-    //   console.log("This is response.data.length before: " + response.data.length);
+    
     if (response.data.length > 5) {
-      //turn this into a terneiry
       response.data.length = 5;
-    }
+    };
+
     var loopLength = response.data.length;
-    // console.log("This is loopLength: " + loopLength);
+   
     for (i = 0; i < loopLength; i++) {
       //Name of the venue
       var venue = response.data[i].venue.name;
+
       //Venue location
       var city = response.data[i].venue.city;
       var region = response.data[i].venue.region;
       var country = response.data[i].venue.country;
       var location = city + ", " + region + ", " + country;
+
       //Date of the Event (use moment to format this as "MM/DD/YYYY")
       var rawDate = response.data[i].datetime;
       var eventDate = moment(rawDate).format("dddd, MMMM Do YYYY, h:mm a");
@@ -57,24 +56,15 @@ var spotifyFunc = function(argvInput2) {
   var spotify = new Spotify(keys.spotify);
 
   var queryVar = argvInput2.join(" ");
-  // console.log(queryVar);
 
   spotify.search({ type: "track", query: queryVar, limit: 10 }, function(err,data) {
     if (err) {
       return console.log("Error occurred: " + err);
     }
     var itemArray = data.tracks.items;
-    // console.log(itemArray)
 
     for (var i = 0; i < itemArray.length; i++) {
-      // Why didn't a foreach loop work????
-      // START --> FOR ARTISTS
-      // var artistArray = itemArray[i].artists;
-      // var tempArray = [];
-      // for(var key in artistArray){tempArray.push() = artistArray[key]};  // iterate the Object to find ALL artists
-      // console.log("MADE IT HERE!");
       var artist = itemArray[i].album.artists[0].name; //artistArray.name // + ", " + (artistArray[1].name !== undefined ? artistArray[1].name : "" ); // this may work?
-      // END --> FOR ARTISTS
 
       var song = itemArray[i].name;
       var preview = itemArray[i].preview_url === null ? itemArray[i].external_urls.spotify : itemArray[i].preview_url; // If preview_url is NULL, assign 'open.spotify.com' url
@@ -96,7 +86,7 @@ var spotifyFunc = function(argvInput2) {
 var omdbKey = "trilogy";
 var omdbFunc = function(movieVar) {
   var movieName = movieVar.join(" ");
-  // console.log(movieName);
+  
   var queryUrl = "http://www.omdbapi.com/?t=" + movieName.trim("%20") + "&y=&plot=short&apikey=" + omdbKey;
 
   axios.get(queryUrl).then(function(response) {
