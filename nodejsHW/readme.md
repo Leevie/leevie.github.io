@@ -7,28 +7,30 @@ This is a simple NodeJS app that takes in certain commands and outputs (hopefull
 
 Here are the commands and syntax to use:
 
-   * liri `concert-this` {Artist/Band Name, search-string} **Searches for Concert Dates for a supplied Artist**
+Call the app:  
+`node liri.js` `command` `arguments`
 
-   * liri `spotify-this-song` {Song Title, search-string} **Searches for up to 10 songs with this title**
+| Command | Arguments | Description
+| --- | --- | --- |
+| `concert-this` | {Artist/Band Name, search-string} | **Searches for Concert Dates for a supplied Artist** |
+| `spotify-this-song` | {Song Title, search-string} | **Searches for up to 10 songs with this title** |
+| `movie-this` | {Movie Title, search-string} | **Searches for a movie with supplied name** |
+| `do-what-it-says` | {search-string} | placeholder |
 
-   * liri `movie-this` {Movie Title, search-string} **Searches for a movie with supplied name**
+See below for examples:
 
-   * liri `do-what-it-says` {search-string}
+## concert-this  
+`concert-this` Ed Sheeran  
+<img src="figure1.gif" width="800"> 
 
-Desired output will look something like below:
+## spotify-this-song  
+`spotify-this-song` A Cover is Not the Book
+<img src="figure2.gif" width="800"> 
 
-### `concert-this`  
 
-### `spotify-this-song`  
+## movie-this
+`movie-this` Mary Poppins Returns
+<img src="figure3.gif" width="800"> 
 
-### `movie-this`
 
 ### `do-what-it-says`  
-
-![](http://i.imgur.com/OUkLi.gif)   (has to be https://)
-
-![](http://i.imgur.com/Ssfp7.gif)
-
-![text](http://i.imgur.com/60bts.gif)
-
-![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gi)

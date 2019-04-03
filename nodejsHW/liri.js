@@ -1,5 +1,3 @@
-// KEEP THIS FILE FOR REFERENCE!!  MAKE A COPY OF THIS TO PRESENT FOR HOMEWORK!
-
 require("dotenv").config();
 var moment = require("moment");
 var keys = require("./keys.js");
@@ -25,9 +23,9 @@ var bandsFunc = function(artistVar) {
 
   axios.get(queryUrl).then(function(response) {
     //   console.log("This is response.data.length before: " + response.data.length);
-    if (response.data.length > 10) {
+    if (response.data.length > 5) {
       //turn this into a terneiry
-      response.data.length = 10;
+      response.data.length = 5;
     }
     var loopLength = response.data.length;
     // console.log("This is loopLength: " + loopLength);
@@ -43,11 +41,11 @@ var bandsFunc = function(artistVar) {
       var rawDate = response.data[i].datetime;
       var eventDate = moment(rawDate).format("dddd, MMMM Do YYYY, h:mm a");
 
-      console.log("========================================");
-      console.log("=  " + venue);
-      console.log("=  " + location);
-      console.log("=  " + eventDate);
-      console.log("========================================");
+      console.log("==================================================");
+      console.log("=  Venue:  " + venue);
+      console.log("=  Where:  " + location);
+      console.log("=  Data:   " + eventDate);
+      console.log("==================================================");
       console.log("");
     }
   });
