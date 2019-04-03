@@ -85,45 +85,53 @@ var spotifyFunc = function(argvInput2) {
 // Start --> OMDB
 var omdbKey = "trilogy";
 var omdbFunc = function(movieVar) {
+
   var movieName = movieVar.join(" ");
-  
+
+  if (movieName !== ""){
   var queryUrl = "http://www.omdbapi.com/?t=" + movieName.trim("%20") + "&y=&plot=short&apikey=" + omdbKey;
 
-  axios.get(queryUrl).then(function(response) {
-    var movieObj = response.data;
+    axios.get(queryUrl).then(function (response) {
+      var movieObj = response.data;
 
-    var title = movieObj.Title;
-    var year = movieObj.Year;
-    var foundImdbValue = movieObj.Ratings.filter(
-      obj => obj.Source === "Internet Movie Database"
-    );
-    var foundRottenValue = movieObj.Ratings.filter(
-      obj => obj.Source === "Rotten Tomatoes"
-    );
-    var imdbRating = foundImdbValue[0].Value;
-    var rated = movieObj.Rated;
-    var rottenRating = foundRottenValue[0].Value;
-    var country = movieObj.Country;
-    var language = movieObj.Language;
-    var plot = movieObj.Plot;
-    var actors = movieObj.Actors;
+      var title = movieObj.Title;
+      var year = movieObj.Year;
 
-    console.log("=================================================");
-    console.log("=  Movie                  :  " + title);
-    console.log("=  Release Year           :  " + year);
-    console.log("=  Rated                  :  " + rated);
-    console.log("=  IMDB Rating            :  " + imdbRating);
-    console.log("=  Rotten Tomatoes Rating :  " + rottenRating);
-    console.log("=  Country Produced       :  " + country);
-    console.log("=  Language               :  " + language);
-    console.log("=================================================");
-    console.log("=  Movie Plot             :  " + plot);
-    console.log("===========================");
-    console.log("=  Actors/Actresses       :  " + actors);
-    console.log("==========================="); //+ "===" + Array(actors.length).join("=")); // THIS WORKS!  adds "=" until the end of the line above!!!
+      var foundImdbValue = movieObj.Ratings.filter(
+        obj => obj.Source === "Internet Movie Database"
+      );
+      var foundRottenValue = movieObj.Ratings.filter(
+        obj => obj.Source === "Rotten Tomatoes"
+      );
+
+      var imdbRating = foundImdbValue[0].Value;
+      var rated = movieObj.Rated;
+      var rottenRating = foundRottenValue[0].Value;
+      var country = movieObj.Country;
+      var language = movieObj.Language;
+      var plot = movieObj.Plot;
+      var actors = movieObj.Actors;
+
+      console.log("=================================================");
+      console.log("=  Movie                  :  " + title);
+      console.log("=  Release Year           :  " + year);
+      console.log("=  Rated                  :  " + rated);
+      console.log("=  IMDB Rating            :  " + imdbRating);
+      console.log("=  Rotten Tomatoes Rating :  " + rottenRating);
+      console.log("=  Country Produced       :  " + country);
+      console.log("=  Language               :  " + language);
+      console.log("=================================================");
+      console.log("=  Movie Plot             :  " + plot);
+      console.log("===========================");
+      console.log("=  Actors/Actresses       :  " + actors);
+      console.log("==========================="); //+ "===" + Array(actors.length).join("=")); // THIS WORKS!  adds "=" until the end of the line above!!!
 
 
-  });
+    });
+  } else {
+    var defaultVar = ["Mr.", "Nobody"];
+    omdbFunc(defaultVar);
+  }
 };
 // End --> OMDB
 
