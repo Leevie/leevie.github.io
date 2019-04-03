@@ -21,10 +21,7 @@ var bandsFunc = function(artistVar) {
   var artist = artistVar.join(" ");
   //   console.log(artist);
   var queryUrl =
-    "https://rest.bandsintown.com/artists/" +
-    artist +
-    "/events?app_id=" +
-    bandsintown.id;
+    "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=" + bandsintown.id;
 
   axios.get(queryUrl).then(function(response) {
     //   console.log("This is response.data.length before: " + response.data.length);
@@ -62,12 +59,9 @@ var spotifyFunc = function(argvInput2) {
   var spotify = new Spotify(keys.spotify);
 
   var queryVar = argvInput2.join(" ");
-  console.log(queryVar);
+  // console.log(queryVar);
 
-  spotify.search({ type: "track", query: queryVar, limit: 10 }, function(
-    err,
-    data
-  ) {
+  spotify.search({ type: "track", query: queryVar, limit: 10 }, function(err,data) {
     if (err) {
       return console.log("Error occurred: " + err);
     }
@@ -80,15 +74,12 @@ var spotifyFunc = function(argvInput2) {
       // var artistArray = itemArray[i].artists;
       // var tempArray = [];
       // for(var key in artistArray){tempArray.push() = artistArray[key]};  // iterate the Object to find ALL artists
-      console.log("MADE IT HERE!");
+      // console.log("MADE IT HERE!");
       var artist = itemArray[i].album.artists[0].name; //artistArray.name // + ", " + (artistArray[1].name !== undefined ? artistArray[1].name : "" ); // this may work?
       // END --> FOR ARTISTS
 
       var song = itemArray[i].name;
-      var preview =
-        itemArray[i].preview_url === null
-          ? itemArray[i].external_urls.spotify
-          : itemArray[i].preview_url; // If preview_url is NULL, assign 'open.spotify.com' url
+      var preview = itemArray[i].preview_url === null ? itemArray[i].external_urls.spotify : itemArray[i].preview_url; // If preview_url is NULL, assign 'open.spotify.com' url
       var album = itemArray[i].album.name;
 
       console.log("========================================");
@@ -97,6 +88,7 @@ var spotifyFunc = function(argvInput2) {
       console.log("= Preview:  " + preview);
       console.log("= Album:  " + album);
       console.log("========================================");
+      console.log("");
     }
   });
 };
@@ -107,11 +99,7 @@ var omdbKey = "trilogy";
 var omdbFunc = function(movieVar) {
   var movieName = movieVar.join(" ");
   // console.log(movieName);
-  var queryUrl =
-    "http://www.omdbapi.com/?t=" +
-    movieName.trim("%20") +
-    "&y=&plot=short&apikey=" +
-    omdbKey;
+  var queryUrl = "http://www.omdbapi.com/?t=" + movieName.trim("%20") + "&y=&plot=short&apikey=" + omdbKey;
 
   axios.get(queryUrl).then(function(response) {
     var movieObj = response.data;
