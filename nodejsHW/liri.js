@@ -3,6 +3,7 @@ var moment = require("moment");
 var keys = require("./keys.js");
 var Spotify = require("node-spotify-api");
 var axios = require("axios");
+var fs = require("fs");
 
 process.argv.splice(0, 2);
 var argvInput1 = process.argv.shift();
@@ -47,7 +48,9 @@ var bandsFunc = function(artistVar) {
       console.log("==================================================");
       console.log("");
     }
-  });
+  }).catch(function(err){
+    console.log("There was error!");
+  })
 };
 // End --> BANDS_IN_TOWN
 
@@ -145,3 +148,23 @@ if (argvInput1 === "spotify-this-song") {
 if (argvInput1 === "movie-this") {
   omdbFunc(argvInput2);
 }
+
+
+
+// fs.readFile("movies.txt", "utf8", function(error, data) {
+
+//   // If the code experiences any errors it will log the error to the console.
+//   if (error) {
+//     return console.log(error);
+//   }
+
+//   // We will then print the contents of data
+//   console.log(data);
+
+//   // Then split it by commas (to make it more readable)
+//   var dataArr = data.split(",");
+
+//   // We will then re-display the content as an array for later use.
+//   console.log(dataArr);
+
+// });
