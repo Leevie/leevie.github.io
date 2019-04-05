@@ -138,22 +138,25 @@ var omdbFunc = function(movieVar) {
 // End --> OMDB
 
 // Start --> Do What It Says 
-
 var doWhatFunc = function() {
   fs.readFile("random.txt", "utf8", function(error, data) {
     if (error) {
       return console.log(error);
     }
-      var dataArr = data.split(",");
-      var command = dataArr.shift();
-      var argVar = dataArr;
-  
-      startProg(command, argVar);
+      var dataArr = data.split("\r\n");
+
+      dataArr.forEach(element => {
+        var testVar = element.split(",");
+        var command = testVar.shift();
+        var argVar = testVar;
+        startProg(command, argVar);        
+      });
+
   });
   };
-
 // End --> Do What It Says
 
+// Start --> startProg function, starts the program
 var startProg = function(argvInput1, argvInput2) {
   switch (argvInput1) {
     case "concert-this":
@@ -173,6 +176,7 @@ var startProg = function(argvInput1, argvInput2) {
       break;
   }
 };
+// End --> startProg function, starts the program
 
 startProg(argvInput1, argvInput2);
 
