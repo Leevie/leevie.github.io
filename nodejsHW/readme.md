@@ -24,7 +24,7 @@ Call the app:
 | `concert-this` | {Artist/Band Name, search-string} | **Searches for Concert Dates for a supplied Artist** |
 | `spotify-this-song` | {Song Title, search-string} | **Searches for up to 10 songs with this title** |
 | `movie-this` | {Movie Title, search-string} | **Searches for a movie with supplied name** |
-| `do-what-it-says` | {search-string} | placeholder |
+| `do-what-it-says` | N/A | **Takes input from "random.txt** |
 
 See below for examples:
 
@@ -46,3 +46,10 @@ See below for examples:
 
 
 ### `do-what-it-says`  
+`do-what-it-says` (no parameters)
+> ##### random.txt contains the following:
+> spotify-this-song,"I Want it That Way"  
+> movie-this,"Pulp Fiction"  
+> concert-this,Katy Perry  
+#
+<img src="figure4.gif" width="800"> 
