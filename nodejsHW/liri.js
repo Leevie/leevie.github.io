@@ -88,7 +88,6 @@ var spotifyFunc = function(argvInput2) {
 // Start --> OMDB
 var omdbKey = keys.omdb.id;
 var omdbFunc = function(movieVar) {
-
   var movieName = movieVar.join(" ");
 
   if (movieName !== ""){
@@ -138,33 +137,42 @@ var omdbFunc = function(movieVar) {
 };
 // End --> OMDB
 
-// Command-Line Inputs -- Change to a Switch or add the "inquirer npm"
-if (argvInput1 === "concert-this") {
-  bandsFunc(argvInput2);
-}
-if (argvInput1 === "spotify-this-song") {
-  spotifyFunc(argvInput2);
-}
-if (argvInput1 === "movie-this") {
-  omdbFunc(argvInput2);
-}
+// Start --> Do What It Says 
 
+var doWhatFunc = function() {
+  fs.readFile("random.txt", "utf8", function(error, data) {
+    if (error) {
+      return console.log(error);
+    }
+      var dataArr = data.split(",");
+      var command = dataArr.shift();
+      var argVar = dataArr;
+  
+      startProg(command, argVar);
+  });
+  };
 
+// End --> Do What It Says
 
-// fs.readFile("movies.txt", "utf8", function(error, data) {
+var startProg = function(argvInput1, argvInput2) {
+  switch (argvInput1) {
+    case "concert-this":
+      bandsFunc(argvInput2);
+      break;
+    
+    case "spotify-this-song":
+      spotifyFunc(argvInput2);
+      break;
+    
+    case "movie-this":
+      omdbFunc(argvInput2);
+      break;
+    
+    case "do-what-it-says":
+      doWhatFunc();
+      break;
+  }
+};
 
-//   // If the code experiences any errors it will log the error to the console.
-//   if (error) {
-//     return console.log(error);
-//   }
+startProg(argvInput1, argvInput2);
 
-//   // We will then print the contents of data
-//   console.log(data);
-
-//   // Then split it by commas (to make it more readable)
-//   var dataArr = data.split(",");
-
-//   // We will then re-display the content as an array for later use.
-//   console.log(dataArr);
-
-// });
