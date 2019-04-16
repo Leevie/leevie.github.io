@@ -7,3 +7,5 @@
 **Bonus**
 
 * Randomly select the quotes from a predefined array.
+* Gernerate the good/bad phrase randomly from a list of predefined phrases
+* Use the twitter package inside the repsone to also return a random tweet
