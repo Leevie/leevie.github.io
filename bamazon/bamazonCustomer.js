@@ -27,7 +27,23 @@ connection.query("select * from products",function(err, results, fields){
       console.log("===============================================================");
 
     for (var i = 0; i < results.length; i++) {
-        console.log(results[i].item_id + "    | " + results[i].product_name + " | " + results[i].department_name + " | " + results[i].price + " | " + results[i].stock_quantity);
+        /* TRYING TO DISPLAY "OUT OF STOCK" IF QUANTITY '0'  -- FAILED
+        (WHY DOESN'T SOMETHING LIKE THIS WORK??  SHOULDN'T THE FUNCTION RETURN THE VALUE OF THE RESULT?)
+        var stock = function() { if(results[i].stock_quantity === 0) {
+            return "OUT OF STOCK";
+        }else{
+            return results[i].stock_quantity;
+        }};
+         END OF TRYING... */
+
+        // ATTEMPT NUMBER 2  -- WORKS!!
+        if (results[i].stock_quantity === 0){
+            var stock = "OUT OF STOCK!!";
+        } else {var stock = results[i].stock_quantity
+        };
+        // END ATTEMPT NUMBER 2
+
+        console.log(results[i].item_id + "    | " + results[i].product_name + " | " + results[i].department_name + " | " + "$" + results[i].price + " | " + stock);
       }
       console.log("===============================================================");
       custPrompt();
@@ -148,7 +164,7 @@ function selectProducts(productID, quantity) {
     console.log("-----------------");
     var prodObj = res[0]
     console.log("Product Name: " + prodObj.product_name);
-    console.log("Price: " + prodObj.price);
+    console.log("Price: " + "$" + prodObj.price);
     console.log("Quantity: " + quantity);
     console.log("On Hand: " + prodObj.stock_quantity);
     console.log("-----------------");
@@ -181,6 +197,7 @@ function selectProducts(productID, quantity) {
         .then(function(inquirerResponse){
             if (inquirerResponse.choice === "Y"){
                 console.log("Order this up!");
+                console.log ("Your Total is:  " + "$" + (quantity * prodObj.price));
                 orderFunc(prodObj);
             }else if(inquirerResponse.choice === "N"){
                 console.log("Cancel Order!!");
@@ -199,7 +216,8 @@ function selectProducts(productID, quantity) {
             }
         ], 
         function(err, res) {
-            console.log(res.affectedRows + " products updated!\n");
+            // console.log(res.affectedRows + " products updated!\n");
+            console.log("Thank You for shopping!");
             connection.end();
         })
     }
