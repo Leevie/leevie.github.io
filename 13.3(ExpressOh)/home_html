@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <title>Hot Restaurant</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h1>Hot Restaurant!</h1>
+            <hr>
+            <h3>We have only 5 tables! Book your table before they are all gone!</h3>
+            <a href="/tables"><button type="button" class="btn btn-primary">View Tables</button></a>
+            <a href="/reserve"><button type="button" class="btn btn-danger">Make Reservation</button></a>
+        </div>
+    </div>
+    
+
+</body>
+
+</html>
