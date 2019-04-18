@@ -55,8 +55,7 @@ function custPrompt(){
         }
       ])
       .then(function(inquirerResponse) {
-          console.log("\n\n You selected product number: " + inquirerResponse.prodSelected);
-        //   console.log("Quantity: " + inquirerResponse.prodSelectedQuant);
+          console.log("You selected product number: " + inquirerResponse.prodSelected);
           selectProducts(inquirerResponse.prodSelected, inquirerResponse.prodSelectedQuant);
           console.log("Selecting your product...\n");
     });
@@ -64,7 +63,6 @@ function custPrompt(){
 
 
 function selectProducts(productID, quantity) {
-    // console.log("prod id:  " + productID + "   quantity:" + quantity);
   connection.query("SELECT * FROM products WHERE item_id =" + productID, function(err, res) {
     if (err) throw err;
     console.log("You have chosen: " + "\n");
@@ -117,7 +115,6 @@ function selectProducts(productID, quantity) {
             }
         ], 
         function(err, res) {
-            // console.log(res.affectedRows + " products updated!\n");
             console.log("Thank You for shopping!");
             connection.end();
         })
