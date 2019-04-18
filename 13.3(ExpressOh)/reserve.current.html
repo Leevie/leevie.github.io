@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <title>Hot Restaurant</title>
 </head>
+
 <body>
     <div class="container">
         <div class="jumbotron text-center">
@@ -18,30 +20,38 @@
             <a href="/tables"><button type="button" class="btn btn-primary">View Tables</button></a>
             <a href="/"><button type="button" class="btn btn-danger">Home</button></a>
         </div>
+
         <div class="row">
+
             <div class="col-12">
+
                 <div class="card">
                     <div class="card-header">
                         <h3><strong>Reserve a Table</strong></h3>
                     </div>
                     <div class="card-body">
                         <form method="POST" role="form">
+
                             <div class="form-group">
                                 <label for="name">Name</label>
                                 <input type="text" class="form-control" id="name">
                             </div>
+
                             <div class="form-group">
                                 <label for="phone">Phone Number</label>
                                 <input type="text" class="form-control" id="phone">
                             </div>
+
                             <div class="form-group">
                                 <label for="email">Email</label>
                                 <input type="email" class="form-control" id="email">
                             </div>
+
                             <div class="form-group">
                                 <label for="unique-id">Unique ID</label>
                                 <input type="text" class="form-control" id="unique-id">
                             </div>
+
                         </form>
                         <br>
                         <div class="text-right">
@@ -50,10 +60,11 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
 
-        <!-- Footer -->
+<!-- Footer -->
 
         <nav class="navbar sticky-bottom navbar-expand-sm navbar-dark bg-dark">
 
@@ -73,13 +84,10 @@
         
               </ul>
             </div>
-        </nav>
+          </nav>
     </div>
-
     
-
     <script type="text/javascript">
-          var count = 0;
         $("#add-btn").on("click", function (event) {
             event.preventDefault();
             var newTable = {
@@ -88,31 +96,22 @@
                 email: $("#email").val().trim(),
                 uniqueId: $("#unique-id").val().trim()
             };
-            
-            count++
-        
-            if (count <= 3){
+
             $.post("/api/tables", newTable)
                 .then(function (data) {
+                    console.log("reserve.html", data);
                     alert("Reserving your table!");
 
-                    
                     name: $("#name").val("");
                     phone: $("#phone").val("");
                     email: $("#email").val("");
                     uniqueId: $("#unique-id").val("");
                 });
-            }
-            if (count > 3){
-                $.post("/api/waitlist", newTable)
-                .then(function (data) {
-                    alert("Sorry, you're on the waitlist sucka!");
-                });
-            }
         });
     </script>
 
 
 
 </body>
+
 </html>

@@ -18,8 +18,8 @@
             <a href="/reserve"><button type="button" class="btn btn-primary">Make Reservation</button></a>
             <a href="/"><button type="button" class="btn btn-danger">Home</button></a>
         </div>
-        <div id = "table-list"><h2>TABLES</h2></div>
-        <div id = "wait-list"><h2>WAIT LIST</h2></div>
+        <div id = "table-list"></div>
+        <div id = "wait-list"></div>
     </div>
 
 <script type = "text/javascript">
@@ -27,30 +27,24 @@
 $.ajax({url: "/api/tables", method: "GET" })
 .then(function(res){
     console.log(res)
-    var count = 0;
     for(i = 0; i < res.length; i++){
-        count++
-        $("#table-list").append("Table Number :" + count + "<br>")
-        $("#table-list").append("Table ID: " + res[i].uniqueId + "<br>")
-        $("#table-list").append("Name: " + res[i].name + "<br>")
-        $("#table-list").append("Phone: " + res[i].phone + "<br>")
-        $("#table-list").append("Email: " + res[i].email + "<br>" + "<br>")
+        var tableName = res[i].tableName
+        $("#table-list").append(res[i].tableName + "<br>")
+        $("#table-list").append(res[i].name + "<br>")
+        $("#table-list").append(res[i].role + "<br>" + "<br>")
+        console.log(res[i].tableName)
     }
 });
 
-$.ajax({url: "/api/waitlist", method: "GET" })
-.then(function(res){
-    var count = 0;
-    console.log(res)
-    for(i = 0; i < res.length; i++){
-        count++
-        $("#wait-list").append("Table Number :" + count + "<br>")
-        $("#wait-list").append("Table ID: " + res[i].uniqueId + "<br>")
-        $("#wait-list").append("Name: " + res[i].name + "<br>")
-        $("#wait-list").append("Phone: " + res[i].phone + "<br>")
-        $("#wait-list").append("Email: " + res[i].email + "<br>" + "<br>")
-    }
-});
+// $.ajax({url: "/api/waitlist", method: "GET" })
+// .then(function(res){
+//     console.log(res)
+//     for(i = 0; i < res.length; i++){
+//         $("#wait-list").append(res[i].tableName)
+//         $("#wait-list").append(res[i].name)
+//         $("#wait-list").append(res[i].role)
+//     }
+// });
 
 
 </script>
@@ -74,6 +68,5 @@ $.ajax({url: "/api/waitlist", method: "GET" })
       </ul>
     </div>
   </nav>
-    
 </body>
 </html>
