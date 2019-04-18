@@ -64,24 +64,7 @@
             </div>
         </div>
     </div>
-    
-    <script type="text/javascript">
-        $("#add-btn").on("click", function (event) {
-            event.preventDefault();
-            var newTable = {
-                name: $("#name").val().trim(),
-                phone: $("#phone").val().trim(),
-                email: $("#email").val().trim(),
-                uniqueId: $("#unique-id").val().trim()
-            };
 
-            $.post("/reserve", newTable)
-                .then(function (data) {
-                    console.log("reserve.html", data);
-                    alert("Reserving your table!");
-                });
-        });
-    </script>
 
 </body>
 
