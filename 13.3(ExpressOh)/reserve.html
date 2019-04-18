@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <title>Hot Restaurant</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h1>Hot Restaurant!</h1>
+            <hr>
+            <h3>We have only 5 tables! Book your table before they are all gone!</h3>
+            <a href="/tables"><button type="button" class="btn btn-primary">View Tables</button></a>
+            <a href="/home"><button type="button" class="btn btn-danger">Home</button></a>
+        </div>
+
+        <div class="row">
+
+            <div class="col-12">
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3><strong>Reserve a Table</strong></h3>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST" role="form">
+
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="text" class="form-control" id="phone">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="unique-id">Unique ID</label>
+                                <input type="text" class="form-control" id="unique-id">
+                            </div>
+
+                        </form>
+                        <br>
+                        <div class="text-right">
+                            <button type="submit" class="btn btn-primary btn-md" id="add-btn"><span
+                                    class="fa fa-fire"></span>Reserve</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
