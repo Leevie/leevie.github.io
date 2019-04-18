@@ -73,14 +73,13 @@
         
               </ul>
             </div>
-        </nav>
+          </nav>
     </div>
 
     
 
     <script type="text/javascript">
-          var count = 0;
-        $("#add-btn").on("click", function (event) {
+       $("#add-btn").on("click", function (event) {
             event.preventDefault();
             var newTable = {
                 name: $("#name").val().trim(),
@@ -88,29 +87,29 @@
                 email: $("#email").val().trim(),
                 uniqueId: $("#unique-id").val().trim()
             };
-            
-            count++
-        
-            if (count <= 3){
+            $.ajax({url: "/api/tables", method: "GET" })
+
+            .then(function(res){
+               if (res.length <= 2){
             $.post("/api/tables", newTable)
                 .then(function (data) {
                     alert("Reserving your table!");
 
-                    
                     name: $("#name").val("");
                     phone: $("#phone").val("");
                     email: $("#email").val("");
                     uniqueId: $("#unique-id").val("");
                 });
             }
-            if (count > 3){
+            if (res.length >= 3){
                 $.post("/api/waitlist", newTable)
                 .then(function (data) {
                     alert("Sorry, you're on the waitlist sucka!");
                 });
             }
-        });
-    </script>
+            });
+
+        });    </script>
 
 
 
