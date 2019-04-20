@@ -56,8 +56,9 @@ function custPrompt(){
       ])
       .then(function(inquirerResponse) {
           console.log("You selected product number: " + inquirerResponse.prodSelected);
-          selectProducts(inquirerResponse.prodSelected, inquirerResponse.prodSelectedQuant);
           console.log("Selecting your product...\n");
+          setTimeout(function(){ selectProducts(inquirerResponse.prodSelected, inquirerResponse.prodSelectedQuant) }, 2000);
+          
     });
 };
 
