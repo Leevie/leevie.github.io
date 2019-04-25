@@ -1,0 +1,27 @@
+* {
+    box-sizing: content-box;
+}
+
+/* div {
+    border: 1px red dotted;
+} */
+
+.container {
+    width: 960px;
+}
+
+#survey-form {
+    height: 600px;
+}
+
+/* JQueryUI */
+fieldset {
+    border: 0;
+  }
+  label {
+    display: block;
+    margin: 30px 0 0 0;
+  }
+  .overflow {
+    height: 200px;
+  }
