@@ -1,19 +1,21 @@
+let friendDB = require("../data/friend");
 
 module.exports = function(app){
 
 
-let friendList = [];
 
 
 app.get("/api/friends", function(req, res) {
-    return res.json(res)
+    console.log("------- Inside '/api/friends Route Ma Dewd!!  '--------");
+    return res.json(friendDB);
 });
 
 app.post("/api/friends", function(req, res) {
     var newFriend = req.body;
+    console.log(newFriend);
 
-    friendList.push(newFriend);
-    res.json(newFriend);
+    friendDB.push(newFriend);
+    return res.json(friendDB);
 });
 
 }
