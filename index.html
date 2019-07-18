@@ -1,401 +1,566 @@
 <!DOCTYPE html>
-<html lang='en'>
-<head>
-<meta charset='UTF-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1.0'>
-<meta http-equiv='X-UA-Compatible' content='ie=edge'>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<title>Leevie Martin - Portfolio</title>
+    <title>Leevie Martin - Portfolio</title>
 
-<!-- Favicon Placeholder-->
-<link href="portfolio/assets/images/profilePic.png" rel="icon">
+    <!-- Favicon Placeholder-->
+    <link href="portfolio/assets/images/profilePic.png" rel="icon" />
 
-<!-- Bootstrap CSS -->
-<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css' integrity='sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS' crossorigin='anonymous'>
-<link rel='stylesheet' href='portfolio/assets/css/style.css'>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="portfolio/assets/css/style.css" />
 
-<script src= "https://cdn.zingchart.com/zingchart.min.js"></script>
-<script> zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/"; 
-ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9","ee6b7db5b51705a13dc2339db3edaf6d"];</script>
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <script>
+      zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+      ZC.LICENSE = [
+        "569d52cefae586f634c54f86dc99e6a9",
+        "ee6b7db5b51705a13dc2339db3edaf6d"
+      ];
+    </script>
 
-</head>
-<body>
-<!-- Start of Nav Bar -->
-            <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
-                <div class="container">
-                  <a class="navbar-brand js-scroll" href="#page-top">Leevie Martin</a>
-                  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
-                    aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </button>
-                  <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
-                    <ul class="navbar-nav">
-                      <li class="nav-item">
-                        <a class="nav-link js-scroll active" href="#home">Home</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link js-scroll" href="#about">About</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link js-scroll" href="#work">Portfolio</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link js-scroll" href="#contact">Contact</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </nav>
-<!-- End of Nav Bar -->
-
-<!-- Start of Intro -->
-<div id="home" class="head-content route bg-image" style="background-image: url(portfolio/assets/images/kat-stokes-1214177-unsplash.jpg)">
-        <div id="main-title" class="container">
-            <div class="row" id="filler-top"><div class="col-md-12"></div></div>
-            <div class="row" id="middle-div"><div class="col-md-12">
-                    <h1 class="mb-4">I am Leevie Martin</h1>
-                    <p id="main-subtitle"><span class="text-slider-items">Full Stack Web Developer,System Engineer,Frontend Developer</span><strong class="text-slider"></strong></p>          
-            </div></div>
-            <div class="row" id="filler-bottom"><div class="col-md-12"></div></div>
+    <link href="https://unpkg.com/ionicons@4.5.5/dist/css/ionicons.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Start of Nav Bar -->
+    <nav
+      id="mainNav"
+      class="navbar navbar-expand-md bg-white fixed-top navbar-transparent" color-on-scroll="500"
+    >
+      <div class="container">
+        <a class="navbar-brand js-scroll" href="#page-top">Leevie Martin</a>
+        <button
+          class="navbar-toggler collapsed"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarDefault"
+          aria-controls="navbarDefault"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div
+          class="navbar-collapse collapse justify-content-end"
+          id="navbarDefault"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link js-scroll active" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll" href="#work">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll" href="#contact">Contact</a>
+            </li>
+          </ul>
         </div>
-        <!-- Sweet Picture from UnSplash:  Thanks Kat Stokes! -->
-    <div id="kat-stokes"><a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@katstokes_?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Kat Stokes"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Kat Stokes</span></a></div>
-</div>
-<!-- End of Intro -->
+      </div>
+    </nav>
+    <!-- End of Nav Bar -->
 
-<!-- Start of Portfolio -->
-<section id="about" class="about-mf sect-pt4 route">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="box-shadow-full">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="row">
-                      <div class="col-sm-6 col-md-5">
-                        <div class="about-img">
-                          <img src="portfolio/assets/images/profilePic.png" class="img-fluid profile-img rounded b-shadow-a" alt="">
-                        </div>
-                      </div>
-                      <div class="col-sm-6 col-md-7">
-                        <div class="about-info">
-                          <p><span class="desc-name">Name: </span> <span>Leevie Martin</span></p>
-                          <p><span class="desc-name">Profile: </span> <span>Full Stack Developer</span></p>
-                          <p><span class="desc-name">Email: </span> <span>leevie.martin@gmail.com</span></p>
-                          <p><span class="desc-name">Phone: </span> <span>612.888.4609</span></p>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- <div class="skill-mf">
-                      <p class="desc-name">Skill</p>
-                      <span>HTML</span> <span class="pull-right">85%</span>
-                      <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0"
-                          aria-valuemax="100"></div>
-                      </div>
-                      <span>CSS3</span> <span class="pull-right">75%</span>
-                      <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
-                          aria-valuemax="100"></div>
-                      </div>
-                      <span>PHP</span> <span class="pull-right">50%</span>
-                      <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                          aria-valuemax="100"></div>
-                      </div>
-                      <span>JAVASCRIPT</span> <span class="pull-right">90%</span>
-                      <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0"
-                          aria-valuemax="100"></div>
-                      </div>
-                    </div> -->
-                    <div id="myChart"><a class="zc-ref" href="https://www.zingchart.com">Powered by ZingChart</a></div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="about-me pt-4 pt-md-0">
-                      <div class="title-box-2">
-                        <h5 class="title-left">
-                          About me
-                        </h5>
-                      </div>
-                      <p class="lead">
-                        Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur arcu erat, accumsan id
-                        imperdiet et, porttitor
-                        at sem. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Nulla
-                        porttitor accumsan tincidunt.
-                      </p>
-                      <p class="lead">
-                        Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus suscipit tortor eget felis
-                        porttitor volutpat. Vestibulum
-                        ac diam sit amet quam vehicula elementum sed sit amet dui. porttitor at sem.
-                      </p>
-                      <p class="lead">
-                        Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim.
-                        Nulla porttitor accumsan
-                        tincidunt. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+    <!-- Start of Intro -->
+    <div
+      id="home"
+      class="head-content route bg-image"
+      style="background-image: url(portfolio/assets/images/kat-stokes-1214177-unsplash.jpg)"
+    >
+      <div id="main-title" class="container">
+        <div class="row" id="filler-top"><div class="col-md-12"></div></div>
+        <div class="row" id="middle-div">
+          <div class="col-md-12">
+            <h1 class="mb-4">I am Leevie Martin</h1>
+            <p id="main-subtitle">
+              <span class="text-slider-items">
+                Full Stack Web Developer,System Engineer,Frontend Developer
+              </span>
+              <strong class="text-slider"></strong>
+            </p>
           </div>
         </div>
-      </section>
-    
-<div class="container breakline"></div>
+        <div class="row" id="filler-bottom"><div class="col-md-12"></div></div>
+      </div>
+      <!-- Sweet Picture from UnSplash:  Thanks Kat Stokes! -->
+      <div id="kat-stokes">
+        <a
+          style='background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Ubuntu, Roboto, Noto, "Segoe UI", Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px'
+          href="https://unsplash.com/@katstokes_?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Download free do whatever you want high-resolution photos from Kat Stokes"
+          ><span style="display:inline-block;padding:2px 3px"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white"
+              viewBox="0 0 32 32"
+            >
+              <title>unsplash-logo</title>
+              <path
+                d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"
+              ></path></svg></span
+          ><span style="display:inline-block;padding:2px 3px"
+            >Photo by:  Kat Stokes</span
+          ></a
+        >
+      </div>
+    </div>
+    <!-- End of Intro -->
 
-  <!--/ Section Portfolio Star /-->
-  <section id="work" class="portfolio-mf sect-pt4 route">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="title-box text-center">
-                <h3 class="title-a">
-                  Portfolio
-                </h3>
-                <p class="subtitle-a">
-                  Here are just a few of my past projects:
-                </p>
-                <div class="line-mf"></div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4">
-              <div class="work-box">
-                <a href="portfolio/assets/images/256.png" data-lightbox="gallery-mf">
-                  <div class="work-img">
-                    <img src="portfolio/assets/images/256.png" alt="" class="img-fluid">
-                  </div>
-                  <div class="work-content">
-                    <div class="row">
-                      <div class="col-sm-8">
-                        <h2 class="w-title">Lorem impsum dolor</h2>
-                        <div class="w-more">
-                          <span class="w-ctegory">Web Design</span> / <span class="w-date">18 Sep. 2018</span>
-                        </div>
-                      </div>
-                      <div class="col-sm-4">
-                        <div class="w-like">
-                          <span class="ion-ios-plus-outline"></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="work-box">
-                <a href="portfolio/assets/images/256.png" data-lightbox="gallery-mf">
-                  <div class="work-img">
-                    <img src="portfolio/assets/images/256.png" alt="" class="img-fluid">
-                  </div>
-                  <div class="work-content">
-                    <div class="row">
-                      <div class="col-sm-8">
-                        <h2 class="w-title">Loreda Cuno Nere</h2>
-                        <div class="w-more">
-                          <span class="w-ctegory">Web Design</span> / <span class="w-date">18 Sep. 2018</span>
-                        </div>
-                      </div>
-                      <div class="col-sm-4">
-                        <div class="w-like">
-                          <span class="ion-ios-plus-outline"></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="work-box">
-                <a href="portfolio/assets/images/256.png" data-lightbox="gallery-mf">
-                  <div class="work-img">
-                    <img src="portfolio/assets/images/256.png" alt="" class="img-fluid">
-                  </div>
-                  <div class="work-content">
-                    <div class="row">
-                      <div class="col-sm-8">
-                        <h2 class="w-title">Mavrito Lana Dere</h2>
-                        <div class="w-more">
-                          <span class="w-ctegory">Web Design</span> / <span class="w-date">18 Sep. 2018</span>
-                        </div>
-                      </div>
-                      <div class="col-sm-4">
-                        <div class="w-like">
-                          <span class="ion-ios-plus-outline"></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="work-box">
-                <a href="portfolio/assets/images/256.png" data-lightbox="gallery-mf">
-                  <div class="work-img">
-                    <img src="portfolio/assets/images/256.png" alt="" class="img-fluid">
-                  </div>
-                  <div class="work-content">
-                    <div class="row">
-                      <div class="col-sm-8">
-                        <h2 class="w-title">Bindo Laro Cado</h2>
-                        <div class="w-more">
-                          <span class="w-ctegory">Web Design</span> / <span class="w-date">18 Sep. 2018</span>
-                        </div>
-                      </div>
-                      <div class="col-sm-4">
-                        <div class="w-like">
-                          <span class="ion-ios-plus-outline"></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="work-box">
-                <a href="portfolio/assets/images/256.png" data-lightbox="gallery-mf">
-                  <div class="work-img">
-                    <img src="portfolio/assets/images/256.png" alt="" class="img-fluid">
-                  </div>
-                  <div class="work-content">
-                    <div class="row">
-                      <div class="col-sm-8">
-                        <h2 class="w-title">Studio Lena Mado</h2>
-                        <div class="w-more">
-                          <span class="w-ctegory">Web Design</span> / <span class="w-date">18 Sep. 2018</span>
-                        </div>
-                      </div>
-                      <div class="col-sm-4">
-                        <div class="w-like">
-                          <span class="ion-ios-plus-outline"></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="work-box">
-                <a href="portfolio/assets/images/256.png" data-lightbox="gallery-mf">
-                  <div class="work-img">
-                    <img src="portfolio/assets/images/256.png" alt="" class="img-fluid">
-                  </div>
-                  <div class="work-content">
-                    <div class="row">
-                      <div class="col-sm-8">
-                        <h2 class="w-title">Studio Big Bang</h2>
-                        <div class="w-more">
-                          <span class="w-ctegory">Web Design</span> / <span class="w-date">18 Sep. 2017</span>
-                        </div>
-                      </div>
-                      <div class="col-sm-4">
-                        <div class="w-like">
-                          <span class="ion-ios-plus-outline"></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            
-          </div>
-        </div>
-      </section>
-      <!--/ Section Portfolio End /-->
-    
-
-
-
-<!-- End of Portfolio -->
-
-  <!--/ Section Contact-Footer Star /-->
-  <section class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(img/overlay-bg.jpg)">
-    <div class="overlay-mf"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="contact-mf">
-            <div id="contact" class="box-shadow-full">
+    <!-- Start of Portfolio -->
+    <section id="about" class="about-mf sect-pt4 route">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="box-shadow-full">
               <div class="row">
                 <div class="col-md-6">
-                  <div class="title-box-2">
-                    <h5 class="title-left">
-                      Send Message Us
-                    </h5>
-                  </div>
-                  <div>
-                      <form action="" method="post" role="form" class="contactForm">
-                      <div id="sendmessage">Your message has been sent. Thank you!</div>
-                      <div id="errormessage"></div>
-                      <div class="row">
-                        <div class="col-md-12 mb-3">
-                          <div class="form-group">
-                            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                            <div class="validation"></div>
-                          </div>
-                        </div>
-                        <div class="col-md-12 mb-3">
-                          <div class="form-group">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                            <div class="validation"></div>
-                          </div>
-                        </div>
-                        <div class="col-md-12 mb-3">
-                            <div class="form-group">
-                              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                              <div class="validation"></div>
-                            </div>
-                        </div>
-                        <div class="col-md-12 mb-3">
-                          <div class="form-group">
-                            <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                            <div class="validation"></div>
-                          </div>
-                        </div>
-                        <div class="col-md-12">
-                          <button type="submit" class="button button-a button-big button-rouded">Send Message</button>
-                        </div>
+                  <div class="row">
+                    <div class="col-sm-6 col-md-5">
+                      <div class="about-img">
+                        <img
+                          src="portfolio/assets/images/profilePic.png"
+                          class="img-fluid profile-img rounded b-shadow-a"
+                          alt=""
+                        />
                       </div>
-                    </form>
+                    </div>
+                    <div class="col-sm-6 col-md-7">
+                      <div class="about-info">
+                        <p>
+                          <span class="desc-name">Name: </span>
+                          <span>Leevie Martin</span>
+                        </p>
+                        <p>
+                          <span class="desc-name">Profile: </span>
+                          <span>Full Stack Developer</span>
+                        </p>
+                        <p>
+                          <span class="desc-name">Email: </span>
+                          <span>leevie.martin@gmail.com</span>
+                        </p>
+                        <p>
+                          <span class="desc-name">Phone: </span>
+                          <span>612.888.4609</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div id="myChart">
+                    <a class="zc-ref" href="https://www.zingchart.com"
+                      >Powered by ZingChart</a
+                    >
                   </div>
                 </div>
                 <div class="col-md-6">
-                  <div class="title-box-2 pt-4 pt-md-0">
-                    <h5 class="title-left">
-                      Get in Touch
-                    </h5>
-                  </div>
-                  <div class="more-info">
+                  <div class="about-me pt-4 pt-md-0">
+                    <div class="title-box-2">
+                      <h5 class="title-left">
+                        About me
+                      </h5>
+                    </div>
                     <p class="lead">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis dolorum dolorem soluta quidem
-                      expedita aperiam aliquid at.
-                      Totam magni ipsum suscipit amet? Autem nemo esse laboriosam ratione nobis
-                      mollitia inventore?
+                      A versatile, enthusiastic and dedicated Web Developer and Information Technology Professional with wide-ranging expertise in computer hardware and software, data migration, computer operations, systems analysis, troubleshooting and end-user support and a focus on implementing innovative solutions to improve efficiency, proactively resolving problems to ensure success, and analytically contributing to challenges with a dedication to continued achievement.  Graduate of the Coding Boot Camp at the University of Minnesota with experience in HTML5, CSS, JavaScript, jQuery, Java, Bootstrap, APIs, JSON, AJAX, Firebase, MySQL, MongoDB, React.js, Node.js, Express.js, Heroku, Git, Github, MVC, ORM, User Authentication, Algorithms, and Data Structures.
+
                     </p>
-                    <ul class="list-ico">
-                      <li><span class="ion-ios-location"></span> 329 WASHINGTON ST BOSTON, MA 02108</li>
-                      <li><span class="ion-ios-telephone"></span> (617) 557-0089</li>
-                      <li><span class="ion-email"></span> contact@example.com</li>
-                    </ul>
+                    <p class="lead">
+                    </p>
+                    <p class="lead">
+
+                    </p>
                   </div>
-                  <div class="socials">
-                    <ul>
-                      <li><a href=""><span class="ico-circle"><i class="ion-social-facebook"></i></span></a></li>
-                      <li><a href=""><span class="ico-circle"><i class="ion-social-instagram"></i></span></a></li>
-                      <li><a href=""><span class="ico-circle"><i class="ion-social-twitter"></i></span></a></li>
-                      <li><a href=""><span class="ico-circle"><i class="ion-social-pinterest"></i></span></a></li>
-                    </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>P
+    </section>
+
+    <div class="container breakline"></div>
+
+    <!--/ Section Portfolio Star /-->
+    <section id="work" class="portfolio-mf sect-pt4 route">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="title-box text-center">
+              <h3 class="title-a">
+                Portfolio
+              </h3>
+              <p class="subtitle-a">
+                Here are just a few of my past projects:
+              </p>
+              <div class="line-mf"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="work-box">
+              <a
+                href="portfolio/assets/images/256.png"
+                data-lightbox="gallery-mf"
+              >
+                <div class="work-img">
+                  <img
+                    src="portfolio/assets/images/256.png"
+                    alt=""
+                    class="img-fluid"
+                  />
+                </div>
+                <div class="work-content">
+                  <div class="row">
+                    <div class="col-sm-8">
+                      <h2 class="w-title">Lorem impsum dolor</h2>
+                      <div class="w-more">
+                        <span class="w-ctegory">Web Design</span> /
+                        <span class="w-date">18 Sep. 2018</span>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="w-like">
+                        <span class="ion-ios-plus-outline"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="work-box">
+              <a
+                href="portfolio/assets/images/256.png"
+                data-lightbox="gallery-mf"
+              >
+                <div class="work-img">
+                  <img
+                    src="portfolio/assets/images/256.png"
+                    alt=""
+                    class="img-fluid"
+                  />
+                </div>
+                <div class="work-content">
+                  <div class="row">
+                    <div class="col-sm-8">
+                      <h2 class="w-title">Loreda Cuno Nere</h2>
+                      <div class="w-more">
+                        <span class="w-ctegory">Web Design</span> /
+                        <span class="w-date">18 Sep. 2018</span>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="w-like">
+                        <span class="ion-ios-plus-outline"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="work-box">
+              <a
+                href="portfolio/assets/images/256.png"
+                data-lightbox="gallery-mf"
+              >
+                <div class="work-img">
+                  <img
+                    src="portfolio/assets/images/256.png"
+                    alt=""
+                    class="img-fluid"
+                  />
+                </div>
+                <div class="work-content">
+                  <div class="row">
+                    <div class="col-sm-8">
+                      <h2 class="w-title">Mavrito Lana Dere</h2>
+                      <div class="w-more">
+                        <span class="w-ctegory">Web Design</span> /
+                        <span class="w-date">18 Sep. 2018</span>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="w-like">
+                        <span class="ion-ios-plus-outline"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="work-box">
+              <a
+                href="portfolio/assets/images/256.png"
+                data-lightbox="gallery-mf"
+              >
+                <div class="work-img">
+                  <img
+                    src="portfolio/assets/images/256.png"
+                    alt=""
+                    class="img-fluid"
+                  />
+                </div>
+                <div class="work-content">
+                  <div class="row">
+                    <div class="col-sm-8">
+                      <h2 class="w-title">Bindo Laro Cado</h2>
+                      <div class="w-more">
+                        <span class="w-ctegory">Web Design</span> /
+                        <span class="w-date">18 Sep. 2018</span>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="w-like">
+                        <span class="ion-ios-plus-outline"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="work-box">
+              <a
+                href="portfolio/assets/images/256.png"
+                data-lightbox="gallery-mf"
+              >
+                <div class="work-img">
+                  <img
+                    src="portfolio/assets/images/256.png"
+                    alt=""
+                    class="img-fluid"
+                  />
+                </div>
+                <div class="work-content">
+                  <div class="row">
+                    <div class="col-sm-8">
+                      <h2 class="w-title">Studio Lena Mado</h2>
+                      <div class="w-more">
+                        <span class="w-ctegory">Web Design</span> /
+                        <span class="w-date">18 Sep. 2018</span>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="w-like">
+                        <span class="ion-ios-plus-outline"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="work-box">
+              <a
+                href="portfolio/assets/images/256.png"
+                data-lightbox="gallery-mf"
+              >
+                <div class="work-img">
+                  <img
+                    src="portfolio/assets/images/256.png"
+                    alt=""
+                    class="img-fluid"
+                  />
+                </div>
+                <div class="work-content">
+                  <div class="row">
+                    <div class="col-sm-8">
+                      <h2 class="w-title">Studio Big Bang</h2>
+                      <div class="w-more">
+                        <span class="w-ctegory">Web Design</span> /
+                        <span class="w-date">18 Sep. 2017</span>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="w-like">
+                        <span class="ion-ios-plus-outline"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--/ Section Portfolio End /-->
+
+    <div class="container breakline"></div>
+
+    <!-- End of Portfolio -->
+
+    <!--/ Section Contact-Footer Star /-->
+    <section
+      class="paralax-mf footer-paralax bg-image sect-mt4 route"
+      style="background-color: silver"
+    >
+      <div class="overlay-mf"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="contact-mf">
+              <div id="contact" class="box-shadow-full">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="title-box-2">
+                      <h5 class="title-left">
+                        Send Message Us
+                      </h5>
+                    </div>
+                    <div>
+                      <form
+                        action=""
+                        method="post"
+                        role="form"
+                        class="contactForm"
+                      >
+                        <div id="sendmessage">
+                          Your message has been sent. Thank you!
+                        </div>
+                        <div id="errormessage"></div>
+                        <div class="row">
+                          <div class="col-md-12 mb-3">
+                            <div class="form-group">
+                              <input
+                                type="text"
+                                name="name"
+                                class="form-control"
+                                id="name"
+                                placeholder="Your Name"
+                                data-rule="minlen:4"
+                                data-msg="Please enter at least 4 chars"
+                              />
+                              <div class="validation"></div>
+                            </div>
+                          </div>
+                          <div class="col-md-12 mb-3">
+                            <div class="form-group">
+                              <input
+                                type="email"
+                                class="form-control"
+                                name="email"
+                                id="email"
+                                placeholder="Your Email"
+                                data-rule="email"
+                                data-msg="Please enter a valid email"
+                              />
+                              <div class="validation"></div>
+                            </div>
+                          </div>
+                          <div class="col-md-12 mb-3">
+                            <div class="form-group">
+                              <input
+                                type="text"
+                                class="form-control"
+                                name="subject"
+                                id="subject"
+                                placeholder="Subject"
+                                data-rule="minlen:4"
+                                data-msg="Please enter at least 8 chars of subject"
+                              />
+                              <div class="validation"></div>
+                            </div>
+                          </div>
+                          <div class="col-md-12 mb-3">
+                            <div class="form-group">
+                              <textarea
+                                class="form-control"
+                                name="message"
+                                rows="5"
+                                data-rule="required"
+                                data-msg="Please write something for us"
+                                placeholder="Message"
+                              ></textarea>
+                              <div class="validation"></div>
+                            </div>
+                          </div>
+                          <div class="col-md-12">
+                            <button
+                              type="submit"
+                              class="button button-a button-big button-rouded"
+                            >
+                              Send Message
+                            </button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="title-box-2 pt-4 pt-md-0">
+                      <h5 class="title-left">
+                        Get in Touch
+                      </h5>
+                    </div>
+                    <div class="more-info">
+                      <p class="lead">
+                        Like what you see here? <br />
+                        Please feel free to reach out to me:
+                      </p>
+                      <ul class="list-ico">
+                        <li>
+                          <span class="ion-ios-location"></span> Eagan, MN 55123
+                        </li>
+                        <li>
+                          <span class="ion-ios-telephone"></span> 612.888.4609
+                        </li>
+                        <li>
+                          <span class="ion-email"></span>
+                          leevie.martin@gmail.com
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="socials">
+                      <ul>
+                        <li>
+                          <a href="http://facebook.com/leevie"
+                            ><span class="ico-circle"
+                              ><i class="ion-social-facebook"></i></span
+                          ></a>
+                        </li>
+                        <li>
+                          <a href=""
+                            ><span class="ico-circle"
+                              ><i class="ion-social-instagram"></i></span
+                          ></a>
+                        </li>
+                        <li>
+                          <a href=""
+                            ><span class="ico-circle"
+                              ><i class="ion-social-twitter"></i></span
+                          ></a>
+                        </li>
+                        <li>
+                          <a href=""
+                            ><span class="ico-circle"
+                              ><i class="ion-social-pinterest"></i></span
+                          ></a>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -403,41 +568,55 @@ ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9","ee6b7db5b51705a13dc2339db3edaf
           </div>
         </div>
       </div>
-    </div>
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="copyright-box">
-              <p class="copyright">&copy; Copyright <strong>Leevie Martin</strong>. All Rights Reserved</p>
-              <div class="credits">
-                <!--
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="copyright-box">
+                <p class="copyright">
+                  &copy; Copyright <strong>Leevie Martin</strong>. All Rights
+                  Reserved
+                </p>
+                <div class="credits">
+                  <!--
                   All the links in the footer should remain intact.
                   You can delete the links only if you purchased the pro version.
                   Licensing information: https://bootstrapmade.com/license/
                   Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=DevFolio
                 -->
-                Adapted from <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                  Adapted from
+                  <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </footer>
-  </section>
-  <!--/ Section Contact-footer End /-->
+      </footer>
+    </section>
+    <!--/ Section Contact-footer End /-->
 
-  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-  <div id="preloader"></div>
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <div id="preloader"></div>
 
-
-
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js' integrity='sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut' crossorigin='anonymous'></script>
-<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js' integrity='sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k' crossorigin='anonymous'></script>
-<script src='portfolio/assets/javascript/typed/typed.min.js'></script>
-<script src='portfolio/assets/javascript/app.js'></script>
-</body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"
+    ></script>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"
+    ></script>
+    <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"
+    ></script>
+    <script src="portfolio/assets/javascript/typed/typed.min.js"></script>
+    <script src="portfolio/assets/javascript/app.js"></script>
+    <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
+  </body>
 </html>
