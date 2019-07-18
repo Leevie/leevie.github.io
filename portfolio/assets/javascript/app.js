@@ -21,12 +21,16 @@ if ($('.text-slider').length == 1) {
           },
           words: [
             {
+              text: "React.js",
+              count: "300"
+            },
+            {
               text: "Javascript",
               count: "342"
             },
             {
-              text: "NodeJs",
-              count: "296"
+              text: "Node.js",
+              count: "190"
             },
             {
               text: "HTML5",
